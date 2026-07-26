@@ -3,7 +3,7 @@
   top: 0;
   z-index: 20;
   border-bottom: 1px solid rgba(21, 20, 18, 0.08);
-  background: rgba(246, 242, 234, 0.82);
+  background: rgba(246, 242, 234, 0.88);
   backdrop-filter: blur(18px);
 }
 
@@ -49,21 +49,25 @@
   z-index: 30;
   flex-direction: column;
   gap: 5px;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
   justify-content: center;
   align-items: center;
 }
 
 .burgerLine {
   display: block;
-  width: 1.25rem;
+  width: 1.35rem;
   height: 2px;
   background-color: var(--color-ink);
   transition:
     transform var(--duration-medium) var(--ease-standard),
     opacity var(--duration-medium) var(--ease-standard),
     background-color var(--duration-medium) var(--ease-standard);
+}
+
+.burgerActive .burgerLine {
+  background-color: var(--color-porcelain);
 }
 
 .burgerActive .burgerLine:nth-child(1) {
@@ -78,19 +82,21 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile Drawer Overlay */
+/* Mobile Drawer Overlay — Solid Deep Charcoal High-Contrast */
 .drawer {
   position: fixed;
   inset: 0;
   z-index: 25;
-  background: rgba(246, 242, 234, 0.96);
-  backdrop-filter: blur(24px);
+  background: var(--color-night);
+  color: var(--color-porcelain);
+  border-bottom: 2px solid rgba(216, 189, 136, 0.35);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  overflow-y: auto;
   transition:
-    opacity var(--duration-slow) var(--ease-emphasis),
-    visibility var(--duration-slow) var(--ease-emphasis);
+    opacity var(--duration-medium) var(--ease-emphasis),
+    visibility var(--duration-medium) var(--ease-emphasis);
 }
 
 .drawerOpen {
@@ -102,45 +108,46 @@
 .drawerInner {
   display: flex;
   flex-direction: column;
-  height: 100svh;
-  padding-block: var(--space-32) var(--space-64);
+  min-height: 100dvh;
+  padding-block: var(--space-20) var(--space-40);
   justify-content: space-between;
 }
 
 .drawerHeader {
   display: flex;
   align-items: center;
-  height: 3rem;
+  height: 3.5rem;
 }
 
 .drawerNav {
   display: flex;
   flex-direction: column;
-  gap: var(--space-24);
-  margin-top: var(--space-48);
+  gap: var(--space-20);
+  margin-block: var(--space-32);
 }
 
 .drawerNav a {
   font-family: var(--font-serif);
-  font-size: clamp(var(--text-32), 6vw, var(--text-44));
-  color: var(--color-ink);
+  font-size: clamp(var(--text-24), 5vw, var(--text-32));
+  color: var(--color-porcelain);
   font-weight: 500;
   line-height: var(--leading-tight);
+  font-variant-numeric: lining-nums tabular-nums;
   transition:
     padding-left var(--duration-medium) var(--ease-standard),
     color var(--duration-medium) var(--ease-standard);
 }
 
 .drawerNav a:hover {
-  padding-left: var(--space-8);
-  color: var(--color-cedar);
+  padding-left: var(--space-12);
+  color: var(--color-brass-soft);
 }
 
 .drawerFooter {
   display: grid;
   gap: var(--space-12);
-  border-top: 1px solid var(--color-line);
-  padding-top: var(--space-32);
+  border-top: 1px solid rgba(252, 250, 246, 0.12);
+  padding-top: var(--space-24);
 }
 
 .drawerLabel {
@@ -148,18 +155,18 @@
   font-weight: 750;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-brass);
 }
 
 .drawerContact {
   font-size: var(--text-18);
   font-weight: 600;
-  color: var(--color-ink);
+  color: var(--color-porcelain);
   transition: color var(--duration-fast) var(--ease-standard);
 }
 
 .drawerContact:hover {
-  color: var(--color-cedar);
+  color: var(--color-brass-soft);
 }
 
 .drawerLocations {
@@ -169,10 +176,9 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-subtle);
+  color: rgba(252, 250, 246, 0.6);
 }
 
-/* Media Queries aligning with breakpoints.ts (tablet: 760px, but custom trigger at 860px to accommodate link width) */
 @media (max-width: 860px) {
   .inner {
     min-height: 4.5rem;

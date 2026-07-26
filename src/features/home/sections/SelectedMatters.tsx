@@ -8,9 +8,9 @@ export function SelectedMatters() {
     <section className={styles.section} id="matters" data-reveal>
       <Container width="wide">
         <SectionHeader
-          eyebrow="Selected matters"
-          title="Representative work, described with client confidentiality intact."
-          copy="Matter notes are framed by role and decision context, not client names."
+          eyebrow="Seçkin Davalar & İşlemler"
+          title="Gizlilik ilkelerine bağlı kalınarak temsil edilen örnek çalışmalar."
+          copy="İşlem notları müvekkil isimleriyle değil, üstlenilen rol ve karar bağlamıyla çerçevelenmiştir."
         />
         <div className={styles.list}>
           {selectedMatters.map((matter) => (

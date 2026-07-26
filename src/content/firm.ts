@@ -1,112 +1,112 @@
 export const navItems = [
-  { label: "About", href: "/about" },
-  { label: "Expertise", href: "#expertise" },
-  { label: "Method", href: "#method" },
-  { label: "Matters", href: "#matters" },
-  { label: "Insights", href: "#insights" },
-  { label: "Contact", href: "#contact" }
+  { label: "Hakkımızda", href: "/about" },
+  { label: "Uzmanlıklarımız", href: "#expertise" },
+  { label: "Yöntemimiz", href: "#method" },
+  { label: "Seçkin Davalar", href: "#matters" },
+  { label: "Yayınlar", href: "#insights" },
+  { label: "İletişim", href: "#contact" }
 ] as const;
 
 export const heroStats = [
-  { value: "18+", label: "Years advising decision makers" },
-  { value: "32", label: "Cross-border jurisdictions" },
-  { value: "4", label: "Core advisory practices" }
+  { value: "18+", label: "Yıllık Kıdemli Danışmanlık Tecrübesi" },
+  { value: "32", label: "Uluslararası Hukuk Ağı ve Yargı Alanı" },
+  { value: "4", label: "Temel Uzmanlık Disiplini" }
 ] as const;
 
 export const practiceAreas = [
   {
     eyebrow: "01",
-    title: "Corporate & M&A",
-    copy: "Transaction architecture, governance, shareholder relations, investment rounds, and board-level commercial judgment.",
-    capabilities: ["Transaction Structuring", "Cross-Border M&A", "Shareholder Governance", "Venture & Investment Rounds"]
+    title: "Şirketler Hukuku & M&A",
+    copy: "Şirket birleşme ve devralmaları, ortaklık yapılandırmaları, hissedar ilişkileri, yatırım turları ve yönetim kurulu seviyesinde ticari danışmanlık.",
+    capabilities: ["İşlem Yapılandırması", "Sınır Ötesi Birleşme & Devralmalar", "Hissedar Yönetişimi", "Girişim & Yatırım Turları"]
   },
   {
     eyebrow: "02",
-    title: "Dispute Resolution",
-    copy: "High-stakes commercial disputes, interim measures, settlement strategy, and litigation decisions shaped around business consequence.",
-    capabilities: ["Commercial Litigation", "Interim Relief & Injunctions", "Board & Shareholder Conflicts", "Settlement Negotiation"]
+    title: "Uyuşmazlık Çözümü & Tahkim",
+    copy: "Yüksek ölçekli ticari uyuşmazlıklar, ihtiyati tedbir süreçleri, sulh stratejileri ve ticari sonuçlara odaklı dava yönetimi.",
+    capabilities: ["Ticari Davalar", "İhtiyati Tedbir & İhtiyati Haciz", "Hissedar & Yönetim Uyuşmazlıkları", "Sulh & Müzakere Yönetimi"]
   },
   {
     eyebrow: "03",
-    title: "Technology & Data",
-    copy: "Platform contracts, privacy programs, data transfers, regulatory risk, and practical operating policies for fast-moving teams.",
-    capabilities: ["Data Protection & GDPR", "SaaS & Enterprise Contracts", "Regulatory Compliance", "Vendor Risk Frameworks"]
+    title: "Teknoloji & Veri Koruma",
+    copy: "Dijital platform sözleşmeleri, KVKK/GDPR uyum programları, veri transferleri, düzenleyici risk yönetimi ve operasyonel politikalar.",
+    capabilities: ["KVKK & GDPR Uyum Yönetimi", "SaaS & Kurumsal Sözleşmeler", "Düzenleyici Kurum Uyum Süreçleri", "Tedarikçi Risk Çerçeveleri"]
   },
   {
     eyebrow: "04",
-    title: "Employment & Mobility",
-    copy: "Executive employment, workforce design, incentives, internal investigations, and immigration strategy for specialist talent.",
-    capabilities: ["Executive Contracts & Severance", "Incentive & Option Plans", "Internal Investigations", "Global Mobility Strategy"]
+    title: "İş Hukuku & Üst Düzey Mobilite",
+    copy: "Üst düzey yönetici sözleşmeleri, organizasyonel yapılandırma, teşvik paketleri, kurum içi soruşturmalar ve uluslararası çalışma izinleri.",
+    capabilities: ["Yönetici Sözleşmeleri & Fesih Yönetimi", "Hisse Opsiyonu & Teşvik Paketleri", "Kurum İçi İnceleme & Soruşturma", "Uluslararası Mobilite Stratejisi"]
   }
 ] as const;
 
 export const methodSteps = [
-  "Map the commercial objective before the legal theory.",
-  "Reduce complex risk into clear decision paths.",
-  "Keep partners close to the work when stakes are highest."
+  "Hukuki teoriden önce ticari hedefi ve iş modelini haritalandırıyoruz.",
+  "Karmaşık hukuki riskleri net ve uygulanabilir karar yollarına dönüştürüyoruz.",
+  "Kritik kararlarda ve yüksek riskli süreçlerde kıdemli ortakları doğrudan çalışmaya dahil ediyoruz."
 ] as const;
 
 export const selectedMatters = [
   {
-    type: "Acquisition counsel",
-    title: "Advised a private investor group on a confidential multi-stage acquisition.",
-    detail: "Structuring, diligence, negotiation strategy, and closing coordination across local and international stakeholders."
+    type: "Birleşme & Devralma Danışmanlığı",
+    title: "Özel bir yatırım grubunun çok aşamalı uluslararası satın alma sürecinde danışmanlık sağlandı.",
+    detail: "Yerel ve uluslararası paydaşlar arasında yapılandırma, hukuki inceleme (due diligence), müzakere stratejisi ve kapanış koordinasyonu."
   },
   {
-    type: "Dispute strategy",
-    title: "Designed a settlement and interim relief approach for a board-sensitive commercial conflict.",
-    detail: "Evidence review, risk scenarios, executive reporting, and negotiation sequencing."
+    type: "Uyuşmazlık & Dava Stratejisi",
+    title: "Yönetim kurulu seviyesindeki ticari uyuşmazlıkta sulh ve ihtiyati tedbir stratejisi tasarlandı.",
+    detail: "Delil tespiti, risk senaryoları, üst düzey yönetim raporlaması ve müzakere sıralaması yürütüldü."
   },
   {
-    type: "Technology operations",
-    title: "Built a data and vendor contract framework for a regulated digital service.",
-    detail: "Privacy controls, processor terms, incident duties, product workflow review, and internal playbooks."
+    type: "Teknoloji Operasyonları",
+    title: "Düzenlemeye tabi bir dijital hizmet için veri ve tedarikçi sözleşme çerçevesi oluşturuldu.",
+    detail: "Veri koruma denetimleri, veri işleyen şartları, olay müdahale yükümlülükleri ve kurum içi uygulama rehberleri."
   }
 ] as const;
 
 export const principles = [
   {
     id: "I",
-    title: "Measured communication",
-    desc: "We speak with absolute precision. No dense legal jargon—just clear paths and calculated advice for decision makers."
+    title: "Ölçülü ve Net İletişim",
+    desc: "Tam bir hassasiyetle konuşuyoruz. Yoğun hukuk terimlerinden uzak, karar vericiler için net ve hesaplanmış yollar sunuyoruz."
   },
   {
     id: "II",
-    title: "Commercially literate drafting",
-    desc: "Contracts designed around transaction dynamics. We draft to facilitate commerce, protect assets, and eliminate friction."
+    title: "Ticari Gerçeklere Uygun Taslaklar",
+    desc: "İşlemlerin dinamiğine göre tasarlanan sözleşmeler. Ticareti kolaylaştıran, varlıkları koruyan ve pürüzleri gideren metinler kaleme alıyoruz."
   },
   {
     id: "III",
-    title: "Partner-led judgment",
-    desc: "The partners who advise you are the ones executing the work. Senior counsel remains close when stakes are highest."
+    title: "Kıdemli Ortak Liderliğinde Kararlar",
+    desc: "Size danışmanlık yapan ortaklar, işi bizzat yürüten kişilerdir. Risk yüksek olduğunda kıdemli avukatlarımız daima işin başındadır."
   },
   {
     id: "IV",
-    title: "Confidential execution",
-    desc: "Absolute discretion in sensitive mandates. We operate with strict confidentiality protocols across all jurisdictions."
+    title: "Mutlak Gizlilikle Uygulama",
+    desc: "Hassas süreçlerde tam bir gizlilik. Tüm uluslararası yargı alanlarında sıkı gizlilik protokolleri çerçevesinde hareket ediyoruz."
   }
 ] as const;
 
 export const articles = [
   {
-    date: "October 2024",
-    category: "Corporate & M&A",
-    title: "Structuring Cross-Border Joint Ventures: Risk Mitigation & Governance Controls",
-    readTime: "6 min read",
-    summary: "An operational briefing on shareholder deadlock resolution, drag-along mechanisms, and jurisdiction selection for international investments."
+    date: "Ekim 2024",
+    category: "Şirketler Hukuku & M&A",
+    title: "Sınır Ötesi Ortak Girişimlerde (Joint Venture) Risk Yönetimi ve Yönetişim Kontrolleri",
+    readTime: "6 dk okuma",
+    summary: "Uluslararası yatırımlarda kilitlenme (deadlock) çözümleri, birlikte sürükleme (drag-along) mekanizmaları ve yargı alanı seçimi üzerine operasyonel bilgi notu."
   },
   {
-    date: "August 2024",
-    category: "Technology & Data",
-    title: "EU AI Act Compliance for Enterprise Platforms: Operating Duties & Vendor Liabilities",
-    readTime: "8 min read",
-    summary: "Key compliance checkpoints for platform providers, data processing duties, and model risk categorization."
+    date: "Ağustos 2024",
+    category: "Teknoloji & Veri Koruma",
+    title: "Kurumsal Platformlar İçin Yapay Zeka Yasası (EU AI Act) Uyum Rehberi",
+    readTime: "8 dk okuma",
+    summary: "Platform sağlayıcıları için temel uyum kontrol noktaları, veri işleme sorumlulukları ve model risk kategorizasyonu."
   },
   {
-    date: "May 2024",
-    category: "Dispute Strategy",
-    title: "Interim Injunction Strategy in High-Stakes Commercial Conflicts",
-    readTime: "5 min read",
-    summary: "Evaluating early evidentiary preservation, asset freezing orders, and board reporting protocols before filing formal litigation."
+    date: "Mayıs 2024",
+    category: "Uyuşmazlık Stratejisi",
+    title: "Ticari Uyuşmazlıklarda İhtiyati Tedbir ve İhtiyati Haciz Stratejisi",
+    readTime: "5 dk okuma",
+    summary: "Dava açılmadan önce delil tespiti, varlık dondurma kararları ve yönetim kurulu raporlama protokollerinin değerlendirilmesi."
   }
 ] as const;

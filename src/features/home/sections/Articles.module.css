@@ -61,6 +61,7 @@
   font-family: var(--font-serif);
   font-size: var(--text-14);
   color: var(--color-muted);
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 .body {

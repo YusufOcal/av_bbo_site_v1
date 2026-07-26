@@ -9,14 +9,14 @@ export function PracticeFocus() {
       <Container className={styles.inner} width="wide">
         {/* Left Column: Editorial Header */}
         <header className={styles.header}>
-          <Eyebrow>Expertise</Eyebrow>
+          <Eyebrow>Faaliyet Alanlarımız</Eyebrow>
           <h2 id="expertise-title" className={styles.title}>
-            A focused practice for business-critical legal work.
+            İş dünyası için kritik hukuki süreçlerde odaklanmış danışmanlık.
           </h2>
           <div className={styles.headerCopy}>
             <p>
-              The firm stays intentionally selective so senior attention remains close to every
-              mandate, combining strategic legal insight with commercial clarity.
+              Kıdemli ortaklarımızın her dosyaya bizzat odaklanabilmesi için danışmanlık kapasitemizi bilinçli
+              olarak seçici tutuyoruz.
             </p>
           </div>
         </header>
@@ -31,7 +31,7 @@ export function PracticeFocus() {
               </div>
               <p className={styles.areaCopy}>{area.copy}</p>
               {"capabilities" in area && area.capabilities && (
-                <ul className={styles.capabilities} aria-label={`${area.title} key capabilities`}>
+                <ul className={styles.capabilities} aria-label={`${area.title} temel yetkinlikler`}>
                   {area.capabilities.map((cap) => (
                     <li key={cap} className={styles.capability}>
                       {cap}

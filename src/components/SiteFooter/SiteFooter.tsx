@@ -13,15 +13,14 @@ export function SiteFooter() {
           <div className={styles.identity}>
             <BrandMark tone="light" />
             <p className={styles.premise}>
-              Independent legal counsel advising decision makers through corporate transactions,
-              commercial disputes, and governance mandates.
+              Kuruculara, yönetim kurullarına ve yatırımcılara ticari uyuşmazlık ve birleşmelerde stratejik danışmanlık.
             </p>
           </div>
 
           {/* Column 2: Core Navigation */}
           <div className={styles.column}>
-            <span className={styles.columnHeader}>Navigation</span>
-            <nav className={styles.links} aria-label="Footer navigation">
+            <span className={styles.columnHeader}>Gezinti</span>
+            <nav className={styles.links} aria-label="Footer navigasyonu">
               {navItems.map((item) => (
                 <a href={item.href} key={item.href}>
                   {item.label}
@@ -32,8 +31,8 @@ export function SiteFooter() {
 
           {/* Column 3: Practices */}
           <div className={styles.column}>
-            <span className={styles.columnHeader}>Practices</span>
-            <nav className={styles.links} aria-label="Practice areas menu">
+            <span className={styles.columnHeader}>Uzmanlık Alanlarımız</span>
+            <nav className={styles.links} aria-label="Uzmanlık alanları menüsü">
               {practiceAreas.map((area) => (
                 <a href="#expertise" key={area.title}>
                   {area.title}
@@ -44,11 +43,11 @@ export function SiteFooter() {
 
           {/* Column 4: Desks & Locations */}
           <div className={styles.column}>
-            <span className={styles.columnHeader}>Desks & Networks</span>
+            <span className={styles.columnHeader}>Ofis & Ağlar</span>
             <div className={styles.metaList}>
-              <span>Istanbul Office</span>
-              <span>London Aligned</span>
-              <span>Cross-border Mandates</span>
+              <span>İstanbul Ofisi</span>
+              <span>Londra Ağı Uyumlu</span>
+              <span>Sınır Ötesi İşlem Masası</span>
             </div>
           </div>
         </div>
@@ -56,15 +55,15 @@ export function SiteFooter() {
         {/* Bottom Legal & Regulatory Bar */}
         <div className={styles.bottomBar}>
           <p className={styles.regulatory}>
-            BBO Legal is an independent law practice registered in Istanbul. Mandatory client
-            confidentiality and conflict clearance protocols apply to all inquiries.
+            BBO Legal, İstanbul Barosu'na kayıtlı bağımsız bir hukuk bürosudur. Tüm başvurularda müvekkil
+            gizliliği ve çakışma kontrolü (conflict check) protokolleri uygulanır.
           </p>
           <div className={styles.legalMeta}>
-            <span>&copy; {new Date().getFullYear()} BBO Legal. All rights reserved.</span>
+            <span>&copy; {new Date().getFullYear()} BBO Legal. Tüm hakları saklıdır.</span>
             <div className={styles.legalLinks}>
-              <a href="#main-content">Privacy Notice</a>
+              <a href="#main-content">Gizlilik Bildirimi</a>
               <span aria-hidden="true">&bull;</span>
-              <a href="#main-content">Terms of Engagement</a>
+              <a href="#main-content">Danışmanlık Şartları</a>
             </div>
           </div>
         </div>

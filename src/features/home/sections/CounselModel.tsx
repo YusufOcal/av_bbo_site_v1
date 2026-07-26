@@ -9,27 +9,26 @@ export function CounselModel() {
     <section className={styles.section} id="method" data-reveal>
       <Container className={styles.inner} width="wide">
         <div className={styles.intro}>
-          <Eyebrow tone="light">Counsel model</Eyebrow>
-          <h2>Legal advice built around judgment, timing, and consequence.</h2>
+          <Eyebrow tone="light">Danışmanlık Modeli</Eyebrow>
+          <h2>Karar, zamanlama ve ticari sonuçlar üzerine kurgulanmış danışmanlık.</h2>
           <div className={styles.introCopy}>
             <p>
-              Complex matters rarely fail because the law is unknown. They fail when legal options are
-              separated from negotiation posture, operational capacity, or board appetite.
+              Karmaşık hukuki süreçler hukuk bilinmediği için değil; hukuki seçenekler müzakere pozisyonundan veya
+              yönetim kurulunun ticari hedeflerinden koptuğu için başarısız olur.
             </p>
             <p>
-              BBO Legal works as a compact senior team, translating legal analysis into decisions that
-              can be explained, executed, and defended.
+              BBO Legal, hukuki analizleri savunulabilir, uygulanabilir ve net kararlara dönüştüren kıdemli bir ekiple çalışır.
             </p>
             <div className={styles.action}>
               <Button href="#contact" variant="secondary">
-                Discuss a mandate
+                Bir Süreç Değerlendirin
               </Button>
             </div>
           </div>
         </div>
         <div className={styles.stepsContainer}>
           <div className={styles.stepsHeader}>
-            <span className={styles.stepsLabel}>Operational Method</span>
+            <span className={styles.stepsLabel}>Operasyonel Yöntemimiz</span>
           </div>
           <ol className={styles.steps}>
             {methodSteps.map((step, index) => (

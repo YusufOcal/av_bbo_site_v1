@@ -14,20 +14,20 @@ export function Hero() {
       </div>
       <Container className={styles.inner} width="wide">
         <div className={styles.copy}>
-          <Eyebrow tone="light">Independent legal strategy</Eyebrow>
-          <h1 id="hero-title">Counsel for matters that shape the business.</h1>
+          <Eyebrow tone="light">Bağımsız Hukuki Strateji</Eyebrow>
+          <h1 id="hero-title">İş dünyasını şekillendiren kararlar için stratejik danışmanlık.</h1>
           <p>
-            BBO Legal advises founders, boards, investors, and operators through sensitive
-            transactions, disputes, and governance decisions where precision and discretion matter.
+            BBO Legal; hassas birleşme devralmalar, ticari uyuşmazlıklar ve yönetişim kararlarında kuruculara,
+            yönetim kurullarına ve yatırımcılara hassasiyet ve gizlilikle danışmanlık sunar.
           </p>
           <div className={styles.actions}>
-            <Button href="#contact">Start a conversation</Button>
+            <Button href="#contact">Görüşme Başlatın</Button>
             <Button href="#expertise" variant="secondary">
-              View expertise
+              Uzmanlıklarımızı İnceleyin
             </Button>
           </div>
         </div>
-        <aside className={styles.panel} aria-label="Firm highlights">
+        <aside className={styles.panel} aria-label="Büro istatistikleri">
           {heroStats.map((stat) => (
             <Stat key={stat.label} label={stat.label} value={stat.value} />
           ))}

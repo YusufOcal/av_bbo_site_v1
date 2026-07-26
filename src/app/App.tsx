@@ -38,7 +38,7 @@ export function App() {
   return (
     <div className="app-shell">
       <a href="#main-content" className="skip-link">
-        Skip to main content
+        Ana içeriğe atla
       </a>
       <SiteHeader />
       {route === "about" ? <AboutPage /> : <HomePage />}

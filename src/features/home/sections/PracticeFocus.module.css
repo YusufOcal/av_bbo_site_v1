@@ -73,6 +73,7 @@
   font-weight: 500;
   color: var(--color-brass);
   letter-spacing: 0.08em;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 .areaTitle {

@@ -85,7 +85,8 @@
   color: var(--color-brass-soft);
   opacity: 0.85;
   line-height: 1.1;
-  font-weight: 300;
+  font-weight: 500;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 .stepText {

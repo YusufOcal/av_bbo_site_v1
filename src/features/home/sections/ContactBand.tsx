@@ -8,33 +8,33 @@ export function ContactBand() {
     <section className={styles.section} id="contact" aria-labelledby="contact-title" data-reveal>
       <Container className={styles.inner} width="wide">
         <div className={styles.copy}>
-          <Eyebrow tone="light">Confidential Mandate Desk</Eyebrow>
-          <h2 id="contact-title">Bring the matter early, while options remain open.</h2>
+          <Eyebrow tone="light">Gizli Randevu & Başvuru Masası</Eyebrow>
+          <h2 id="contact-title">Seçenekleriniz henüz açıkken, sürecin başında iletişime geçin.</h2>
         </div>
         <div className={styles.protocolBox}>
           <p className={styles.protocolLead}>
-            For sensitive corporate transactions, high-stakes disputes, or strategic board counsel,
-            our partners provide immediate, confidential review.
+            Hassas şirket satın almaları, ticari uyuşmazlıklar veya yönetim kurulu danışmanlıkları için
+            kıdemli ortaklarımız doğrudan, gizlilik esasına dayalı inceleme sağlar.
           </p>
 
           <div className={styles.features}>
             <div className={styles.featureItem}>
-              <span className={styles.featureLabel}>Protocol</span>
-              <span className={styles.featureValue}>Direct Partner Review</span>
+              <span className={styles.featureLabel}>Protokol</span>
+              <span className={styles.featureValue}>Doğrudan Ortak İncelemesi</span>
             </div>
             <div className={styles.featureItem}>
-              <span className={styles.featureLabel}>Conflict Check</span>
-              <span className={styles.featureValue}>Strict Clearance Within 24h</span>
+              <span className={styles.featureLabel}>Çakışma Kontrolü</span>
+              <span className={styles.featureValue}>24 Saat İçinde İnceleme</span>
             </div>
             <div className={styles.featureItem}>
-              <span className={styles.featureLabel}>Discretion</span>
-              <span className={styles.featureValue}>Confidential Communication</span>
+              <span className={styles.featureLabel}>Gizlilik</span>
+              <span className={styles.featureValue}>Mutlak Gizli İletişim</span>
             </div>
           </div>
 
           <div className={styles.actionRow}>
             <Button href="mailto:contact@bbolegal.com" variant="secondary">
-              Initiate Inquiry (contact@bbolegal.com)
+              Başvuru Başlatın (contact@bbolegal.com)
             </Button>
           </div>
         </div>

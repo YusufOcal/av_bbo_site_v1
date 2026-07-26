@@ -8,9 +8,9 @@ export function Articles() {
     <section className={styles.section} id="insights" aria-labelledby="insights-title" data-reveal>
       <Container width="wide">
         <header className={styles.header}>
-          <Eyebrow>Publications & Insights</Eyebrow>
+          <Eyebrow>Yayınlar & Bilgi Notları</Eyebrow>
           <h2 id="insights-title" className={styles.title}>
-            Legal analysis written for executive decision making.
+            Yönetim kurulu ve karar vericiler için kaleme alınan hukuki analizler.
           </h2>
         </header>
 
@@ -27,7 +27,7 @@ export function Articles() {
                 <div className={styles.footer}>
                   <span className={styles.readTime}>{article.readTime}</span>
                   <span className={styles.arrowLink} aria-hidden="true">
-                    Read briefing &rarr;
+                    Bilgi Notunu Okuyun &rarr;
                   </span>
                 </div>
               </div>

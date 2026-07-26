@@ -8,8 +8,8 @@ export function Principles() {
     <section className={styles.section} data-reveal>
       <Container className={styles.inner} width="wide">
         <header className={styles.header}>
-          <Eyebrow>Operating principles</Eyebrow>
-          <h2 className={styles.title}>Four commitments to the mandate.</h2>
+          <Eyebrow>Çalışma İlkelerimiz</Eyebrow>
+          <h2 className={styles.title}>Hukuki süreçlerde 4 temel taahhüdümüz.</h2>
         </header>
         <div className={styles.grid}>
           {principles.map((principle) => (

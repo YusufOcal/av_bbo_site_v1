@@ -1,36 +1,36 @@
 export const aboutContent = {
   hero: {
-    eyebrow: "About BBO Legal",
-    title: "Independent strategy for board-level decisions.",
-    lead: "Founded on the principle that high-stakes legal work requires direct partner judgment, BBO Legal operates as a compact advisory firm for founders, boards, investors, and executive teams."
+    eyebrow: "BBO Legal Hakkında",
+    title: "Yönetim kurulu seviyesindeki kararlar için bağımsız hukuki strateji.",
+    lead: "Yüksek riskli hukuki işlerin doğrudan kıdemli ortak yargısı gerektirdiği ilkesiyle kurulan BBO Legal; kurucular, yönetim kurulları, yatırımcılar ve üst düzey yöneticiler için özel danışmanlık sunar."
   },
   story: {
-    eyebrow: "Our Practice Ethos",
-    title: "Senior attention on every transaction, dispute, and governance mandate.",
+    eyebrow: "Danışmanlık Yaklaşımımız",
+    title: "Her birleşme, uyuşmazlık ve yönetişim sürecinde kıdemli ortak ilgisi.",
     paragraphs: [
-      "BBO Legal was established to provide an alternative to traditional multi-layered law firm structures. We believe the most effective legal counsel comes when senior partners remain intimately involved in drafting, negotiation, and strategic execution.",
-      "Our practice is deliberately selective. By maintaining a lean team of experienced practitioners, we ensure that every client mandate receives undivided partner focus, rapid turnaround, and uncompromised discretion.",
-      "Operating from Istanbul with cross-border capabilities in London and major financial hubs, we bridge local legal frameworks with international transaction standards."
+      "BBO Legal, geleneksel çok katmanlı büro yapılarına alternatif olarak kurulmuştur. En etkili hukuki danışmanlığın, kıdemli ortakların taslak hazırlama, müzakere ve stratejik uygulama süreçlerine bizzat dahil olmasıyla sağlandığına inanıyoruz.",
+      "Danışmanlık modelimiz bilinçli olarak seçicidir. Deneyimli kadromuzla yürütülen süreçlerde, her müvekkilimizin doğrudan ortak ilgisi, hızlı geri dönüş ve mutlak gizlilik almasını sağlıyoruz.",
+      "İstanbul merkezli olarak Londra ve küresel finans merkezleriyle uyumlu çalışıyor, yerel hukuki altyapıyı uluslararası işlem standartlarıyla birleştiriyoruz."
     ]
   },
   stats: [
-    { value: "18+", label: "Years of Senior Board Advisory" },
-    { value: "32", label: "Cross-Border Jurisdictions Covered" },
-    { value: "100%", label: "Partner-Led Mandate Execution" },
-    { value: "4", label: "Core Advisory Practices" }
+    { value: "18+", label: "Yıllık Üst Düzey Danışmanlık Kıdemi" },
+    { value: "32", label: "Uluslararası Hukuk Ağı ve Yargı Alanı" },
+    { value: "100%", label: "Kıdemli Ortak Bizzat Takibi" },
+    { value: "4", label: "Temel Uzmanlık Disiplini" }
   ],
   partners: [
     {
       name: "Burak Bilgin",
-      role: "Senior Partner — Corporate & M&A",
-      qualifications: "LL.M. Commercial Law (London), Istanbul Bar Association",
-      bio: "Advises private equity investors, founders, and international corporate groups on multi-jurisdictional acquisitions, joint ventures, and board-level commercial strategy with over 18 years of experience."
+      role: "Kıdemli Ortak — Şirketler Hukuku & M&A",
+      qualifications: "LL.M. Ticaret Hukuku (Londra), İstanbul Barosu",
+      bio: "18 yılı aşkın deneyimiyle özel sermaye yatırımcılarına, kuruculara ve uluslararası şirket gruplarına birleşme, devralma ve ticari strateji alanlarında danışmanlık sunmaktadır."
     },
     {
       name: "Özlem Orhan",
-      role: "Partner — Dispute Resolution & Governance",
-      qualifications: "LL.B. (Istanbul), FCIArb Member, IBA Delegate",
-      bio: "Specializes in complex commercial litigation, interim relief strategy, shareholder conflicts, and executive disputes across regulated sectors."
+      role: "Ortak — Uyuşmazlık Çözümü & Yönetişim",
+      qualifications: "LL.B. (İstanbul), FCIArb Üyesi, IBA Temsilcisi",
+      bio: "Karmaşık ticari davalar, ihtiyati tedbir stratejileri, hissedar uyuşmazlıkları ve düzenlemeye tabi sektörlerdeki yönetici davalarında uzmanlaşmıştır."
     }
   ]
 } as const;

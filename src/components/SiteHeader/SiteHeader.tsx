@@ -48,7 +48,7 @@ export function SiteHeader() {
         <BrandMark />
 
         {/* Desktop Navigation */}
-        <nav className={styles.nav} aria-label="Primary navigation">
+        <nav className={styles.nav} aria-label="Ana navigasyon">
           {navItems.map((item) => (
             <a href={item.href} key={item.href}>
               {item.label}
@@ -66,7 +66,7 @@ export function SiteHeader() {
           onClick={toggleMenu}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
-          aria-label="Toggle navigation menu"
+          aria-label="Navigasyon menüsünü aç/kapat"
         >
           <span className={styles.burgerLine} />
           <span className={styles.burgerLine} />
@@ -81,9 +81,9 @@ export function SiteHeader() {
         >
           <Container className={styles.drawerInner} width="wide">
             <div className={styles.drawerHeader}>
-              <BrandMark tone="dark" />
+              <BrandMark tone="light" />
             </div>
-            <nav className={styles.drawerNav} aria-label="Mobile navigation">
+            <nav className={styles.drawerNav} aria-label="Mobil navigasyon">
               {navItems.map((item) => (
                 <a href={item.href} key={item.href} onClick={closeMenu}>
                   {item.label}
@@ -91,13 +91,13 @@ export function SiteHeader() {
               ))}
             </nav>
             <div className={styles.drawerFooter}>
-              <span className={styles.drawerLabel}>Confidential Inquiries</span>
+              <span className={styles.drawerLabel}>Gizli Randevu Masası</span>
               <a className={styles.drawerContact} href="mailto:contact@bbolegal.com">
                 contact@bbolegal.com
               </a>
               <div className={styles.drawerLocations}>
-                <span>Istanbul</span>
-                <span>London aligned</span>
+                <span>İstanbul Ofisi</span>
+                <span>Londra Uyumlu</span>
               </div>
             </div>
           </Container>

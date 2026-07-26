@@ -8,9 +8,10 @@
   color: var(--color-porcelain);
   font-family: var(--font-serif);
   font-size: clamp(var(--text-32), 5vw, var(--text-56));
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0;
   line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 .stat span {
