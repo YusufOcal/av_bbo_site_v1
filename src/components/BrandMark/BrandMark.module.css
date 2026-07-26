@@ -1,56 +1,80 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-12);
+  gap: 1rem;
   color: var(--brand-color);
+  text-decoration: none;
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.brand:hover {
+  transform: translateY(-1px);
 }
 
 .dark {
   --brand-color: var(--color-ink);
+  --symbol-border: rgba(179, 136, 80, 0.42);
+  --symbol-text: var(--color-ink);
+  --legal-color: var(--color-brass);
 }
 
 .light {
   --brand-color: var(--color-porcelain);
+  --symbol-border: rgba(216, 189, 136, 0.5);
+  --symbol-text: var(--color-porcelain);
+  --legal-color: var(--color-brass-soft);
 }
 
+/* Scaled up BBO Monogram Symbol Container */
 .symbol {
   display: grid;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 3.25rem;
+  height: 3.25rem;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  border: 1px solid currentColor;
+  border: 1.5px solid var(--symbol-border);
   border-radius: var(--radius-4);
-  color: currentColor;
+  color: var(--symbol-text);
   font-family: var(--font-serif);
-  font-size: var(--text-14);
+  font-size: 0.95rem;
+  font-weight: 600;
   line-height: 1;
   text-align: center;
+  background: rgba(179, 136, 80, 0.04);
+  transition: border-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.brand:hover .symbol {
+  border-color: var(--color-brass);
+  box-shadow: 0 0 16px rgba(216, 189, 136, 0.22);
 }
 
 .symbol span {
-  border-right: 1px solid currentColor;
+  border-right: 1.5px solid var(--symbol-border);
+  padding-block: var(--space-2);
 }
 
 .symbol span:last-child {
   border-right: 0;
 }
 
+/* Scaled up BBO LEGAL Text Copy */
 .copy {
   display: grid;
   gap: var(--space-2);
-  font-size: var(--text-12);
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  line-height: 1;
+  font-size: 0.85rem;
+  font-weight: 750;
+  letter-spacing: 0.2em;
+  line-height: 1.1;
   text-transform: uppercase;
 }
 
-.copy span:last-child {
-  color: var(--color-muted);
-  font-weight: 600;
+.copy span:first-child {
+  color: var(--brand-color);
 }
 
-.light .copy span:last-child {
-  color: rgba(252, 250, 246, 0.64);
+.copy span:last-child {
+  color: var(--legal-color);
+  font-weight: 600;
+  letter-spacing: 0.22em;
 }

@@ -1,3 +1,4 @@
+import grandThemisStatue from "@/assets/visuals/grand-themis-statue.png";
 import { Button } from "@/components/Button/Button";
 import { Container } from "@/components/Container/Container";
 import { Eyebrow } from "@/components/Eyebrow/Eyebrow";
@@ -7,6 +8,9 @@ import styles from "./AboutHero.module.css";
 export function AboutHero() {
   return (
     <section className={styles.hero} aria-labelledby="about-hero-title">
+      <div className={styles.watermark} aria-hidden="true">
+        <img src={grandThemisStatue} alt="" />
+      </div>
       <Container className={styles.inner} width="wide">
         <div className={styles.copy}>
           <Eyebrow tone="light">{aboutContent.hero.eyebrow}</Eyebrow>

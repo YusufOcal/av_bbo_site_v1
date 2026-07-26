@@ -1,8 +1,48 @@
 .section {
-  background: var(--color-night);
+  position: relative;
+  background-color: var(--color-night);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(216, 189, 136, 0.03) 0, rgba(216, 189, 136, 0.03) 1px, transparent 1px, transparent 120px);
   color: var(--color-porcelain);
   border-bottom: 1px solid rgba(252, 250, 246, 0.08);
   padding-block: clamp(var(--space-64), 8vh, var(--space-96));
+  overflow: hidden;
+}
+
+.watermark {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  left: auto;
+  transform: translateY(-50%);
+  width: clamp(28rem, 48vw, 50rem);
+  height: auto;
+  max-height: 145%;
+  opacity: 0.45;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.watermark img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: contrast(1.25) brightness(1.15) drop-shadow(0 0 60px rgba(216, 189, 136, 0.55));
+  animation: themisNoticeableSway 8s ease-in-out infinite alternate;
+}
+
+@keyframes themisNoticeableSway {
+  0% {
+    transform: translateY(0) rotate(-3.5deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(3.5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-3.5deg);
+  }
 }
 
 .inner {

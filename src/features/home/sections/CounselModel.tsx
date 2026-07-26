@@ -1,3 +1,4 @@
+import grandThemisStatue from "@/assets/visuals/grand-themis-statue.png";
 import { Button } from "@/components/Button/Button";
 import { Container } from "@/components/Container/Container";
 import { Eyebrow } from "@/components/Eyebrow/Eyebrow";
@@ -7,6 +8,9 @@ import styles from "./CounselModel.module.css";
 export function CounselModel() {
   return (
     <section className={styles.section} id="method" data-reveal>
+      <div className={styles.watermark} aria-hidden="true">
+        <img src={grandThemisStatue} alt="" />
+      </div>
       <Container className={styles.inner} width="wide">
         <div className={styles.intro}>
           <Eyebrow tone="light">Danışmanlık Modeli</Eyebrow>

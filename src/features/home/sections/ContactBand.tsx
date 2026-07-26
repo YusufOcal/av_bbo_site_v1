@@ -1,3 +1,4 @@
+import grandThemisStatue from "@/assets/visuals/grand-themis-statue.png";
 import { Button } from "@/components/Button/Button";
 import { Container } from "@/components/Container/Container";
 import { Eyebrow } from "@/components/Eyebrow/Eyebrow";
@@ -6,6 +7,9 @@ import styles from "./ContactBand.module.css";
 export function ContactBand() {
   return (
     <section className={styles.section} id="contact" aria-labelledby="contact-title" data-reveal>
+      <div className={styles.watermark} aria-hidden="true">
+        <img src={grandThemisStatue} alt="" />
+      </div>
       <Container className={styles.inner} width="wide">
         <div className={styles.copy}>
           <Eyebrow tone="light">Gizli Randevu & Başvuru Masası</Eyebrow>
