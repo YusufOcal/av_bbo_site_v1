@@ -60,7 +60,7 @@ export function SiteHeader() {
           contact@bbolegal.com
         </a>
 
-        {/* Menu Toggle Button (Mobile & Tablet) */}
+        {/* Single Menu Toggle / Close Button (Mobile & Tablet) */}
         <button
           className={[styles.burger, isMenuOpen ? styles.burgerActive : ""].join(" ")}
           onClick={toggleMenu}
@@ -82,13 +82,6 @@ export function SiteHeader() {
           <Container className={styles.drawerInner} width="wide">
             <div className={styles.drawerHeader}>
               <BrandMark tone="light" />
-              <button
-                className={styles.closeButton}
-                onClick={closeMenu}
-                aria-label="Menüyü kapat"
-              >
-                &times;
-              </button>
             </div>
             <nav className={styles.drawerNav} aria-label="Mobil navigasyon">
               {navItems.map((item) => (

@@ -40,7 +40,7 @@
   color: var(--color-cedar);
 }
 
-/* Burger Toggle Button */
+/* Single Menu / Close Toggle Button */
 .burger {
   display: none;
   background: none;
@@ -125,35 +125,9 @@
 .drawerHeader {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 3.5rem;
   border-bottom: 1px solid rgba(252, 250, 246, 0.08);
   padding-bottom: var(--space-12);
-}
-
-.closeButton {
-  background: none;
-  border: 1px solid rgba(216, 189, 136, 0.4);
-  color: var(--color-porcelain);
-  font-size: 1.75rem;
-  line-height: 1;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: var(--radius-4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 101;
-  pointer-events: auto;
-  transition:
-    border-color var(--duration-fast) var(--ease-standard),
-    color var(--duration-fast) var(--ease-standard);
-}
-
-.closeButton:hover {
-  border-color: var(--color-brass);
-  color: var(--color-brass-soft);
 }
 
 .drawerNav {
