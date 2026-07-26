@@ -66,7 +66,7 @@ export function SiteHeader() {
           onClick={toggleMenu}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
-          aria-label="Navigasyon menüsünü aç/kapat"
+          aria-label={isMenuOpen ? "Menüyü kapat" : "Menüyü aç"}
         >
           <span className={styles.burgerLine} />
           <span className={styles.burgerLine} />
@@ -82,17 +82,29 @@ export function SiteHeader() {
           <Container className={styles.drawerInner} width="wide">
             <div className={styles.drawerHeader}>
               <BrandMark tone="light" />
+              <button
+                className={styles.closeButton}
+                onClick={closeMenu}
+                aria-label="Menüyü kapat"
+              >
+                &times;
+              </button>
             </div>
             <nav className={styles.drawerNav} aria-label="Mobil navigasyon">
               {navItems.map((item) => (
-                <a href={item.href} key={item.href} onClick={closeMenu}>
+                <a
+                  href={item.href}
+                  key={item.href}
+                  onClick={closeMenu}
+                  className={styles.drawerNavLink}
+                >
                   {item.label}
                 </a>
               ))}
             </nav>
             <div className={styles.drawerFooter}>
               <span className={styles.drawerLabel}>Gizli Randevu Masası</span>
-              <a className={styles.drawerContact} href="mailto:contact@bbolegal.com">
+              <a className={styles.drawerContact} href="mailto:contact@bbolegal.com" onClick={closeMenu}>
                 contact@bbolegal.com
               </a>
               <div className={styles.drawerLocations}>
