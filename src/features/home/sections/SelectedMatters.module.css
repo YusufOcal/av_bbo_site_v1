@@ -1,0 +1,74 @@
+.section {
+  padding-block: clamp(var(--space-80), 12vh, var(--space-160));
+  background: var(--color-paper);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.list {
+  display: grid;
+  margin-top: var(--space-64);
+  border-top: 1px solid var(--color-line);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.3fr) minmax(0, 0.8fr) minmax(15rem, 0.5fr);
+  gap: var(--space-32);
+  align-items: start;
+  border-bottom: 1px solid var(--color-line);
+  padding-block: var(--space-40);
+  border-left: 2px solid transparent;
+  padding-left: var(--space-16);
+  transition:
+    border-left-color var(--duration-medium) var(--ease-standard),
+    background-color var(--duration-medium) var(--ease-standard);
+  cursor: pointer;
+}
+
+.item:hover {
+  border-left-color: var(--color-brass);
+  background: rgba(252, 250, 246, 0.6);
+}
+
+.item span {
+  color: var(--color-cedar);
+  font-size: var(--text-12);
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.item h3 {
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-24), 3vw, var(--text-32));
+  font-weight: 500;
+  line-height: var(--leading-snug);
+  transition: color var(--duration-medium) var(--ease-standard);
+}
+
+.item:hover h3 {
+  color: var(--color-cedar);
+}
+
+.item p {
+  color: var(--color-muted);
+  font-size: var(--text-16);
+  line-height: var(--leading-normal);
+}
+
+/* Aligned to 860px to coordinate with global layout collapse rules */
+@media (max-width: 860px) {
+  .item {
+    grid-template-columns: 1fr;
+    gap: var(--space-16);
+    padding-left: var(--space-12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item,
+  .item h3 {
+    transition: none;
+  }
+}

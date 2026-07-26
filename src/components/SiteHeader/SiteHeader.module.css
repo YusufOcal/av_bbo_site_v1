@@ -1,0 +1,194 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(21, 20, 18, 0.08);
+  background: rgba(246, 242, 234, 0.82);
+  backdrop-filter: blur(18px);
+}
+
+.inner {
+  position: relative;
+  display: grid;
+  min-height: 5rem;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-32);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(var(--space-16), 3vw, var(--space-40));
+}
+
+.nav a,
+.contact {
+  color: var(--color-ink-soft);
+  font-size: var(--text-12);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.nav a:hover,
+.contact:hover {
+  color: var(--color-cedar);
+}
+
+/* Burger Toggle Button */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  padding: var(--space-8);
+  cursor: pointer;
+  z-index: 30;
+  flex-direction: column;
+  gap: 5px;
+  width: 2.25rem;
+  height: 2.25rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.burgerLine {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background-color: var(--color-ink);
+  transition:
+    transform var(--duration-medium) var(--ease-standard),
+    opacity var(--duration-medium) var(--ease-standard),
+    background-color var(--duration-medium) var(--ease-standard);
+}
+
+.burgerActive .burgerLine:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burgerActive .burgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerActive .burgerLine:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Drawer Overlay */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 25;
+  background: rgba(246, 242, 234, 0.96);
+  backdrop-filter: blur(24px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--duration-slow) var(--ease-emphasis),
+    visibility var(--duration-slow) var(--ease-emphasis);
+}
+
+.drawerOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.drawerInner {
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  padding-block: var(--space-32) var(--space-64);
+  justify-content: space-between;
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+}
+
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  margin-top: var(--space-48);
+}
+
+.drawerNav a {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-32), 6vw, var(--text-44));
+  color: var(--color-ink);
+  font-weight: 500;
+  line-height: var(--leading-tight);
+  transition:
+    padding-left var(--duration-medium) var(--ease-standard),
+    color var(--duration-medium) var(--ease-standard);
+}
+
+.drawerNav a:hover {
+  padding-left: var(--space-8);
+  color: var(--color-cedar);
+}
+
+.drawerFooter {
+  display: grid;
+  gap: var(--space-12);
+  border-top: 1px solid var(--color-line);
+  padding-top: var(--space-32);
+}
+
+.drawerLabel {
+  font-size: var(--text-12);
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.drawerContact {
+  font-size: var(--text-18);
+  font-weight: 600;
+  color: var(--color-ink);
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.drawerContact:hover {
+  color: var(--color-cedar);
+}
+
+.drawerLocations {
+  display: flex;
+  gap: var(--space-20);
+  font-size: var(--text-12);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-subtle);
+}
+
+/* Media Queries aligning with breakpoints.ts (tablet: 760px, but custom trigger at 860px to accommodate link width) */
+@media (max-width: 860px) {
+  .inner {
+    min-height: 4.5rem;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .contact {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+}

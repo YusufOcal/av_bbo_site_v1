@@ -1,0 +1,26 @@
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-10);
+  color: var(--eyebrow-color);
+  font-size: var(--text-12);
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 2.25rem;
+  height: 1px;
+  background: currentColor;
+  content: "";
+}
+
+.dark {
+  --eyebrow-color: var(--color-cedar);
+}
+
+.light {
+  --eyebrow-color: var(--color-brass-soft);
+}

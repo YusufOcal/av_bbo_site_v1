@@ -1,0 +1,123 @@
+.footer {
+  background: var(--color-night);
+  color: var(--color-porcelain);
+  border-top: 1px solid rgba(252, 250, 246, 0.08);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  padding-block: clamp(var(--space-64), 10vh, var(--space-96)) var(--space-48);
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+  gap: clamp(var(--space-32), 5vw, var(--space-64));
+  padding-bottom: var(--space-64);
+  border-bottom: 1px solid rgba(252, 250, 246, 0.12);
+}
+
+.identity {
+  display: grid;
+  max-width: 24rem;
+  gap: var(--space-24);
+  align-content: start;
+}
+
+.premise {
+  color: rgba(252, 250, 246, 0.62);
+  font-size: var(--text-14);
+  line-height: var(--leading-normal);
+}
+
+.column {
+  display: grid;
+  align-content: start;
+  gap: var(--space-20);
+}
+
+.columnHeader {
+  font-size: var(--text-12);
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-brass-soft);
+}
+
+.links,
+.metaList {
+  display: grid;
+  gap: var(--space-12);
+}
+
+.links a,
+.metaList span {
+  color: rgba(252, 250, 246, 0.72);
+  font-size: var(--text-13, 0.8125rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.links a:hover {
+  color: var(--color-porcelain);
+}
+
+.bottomBar {
+  display: grid;
+  gap: var(--space-24);
+  padding-top: var(--space-32);
+}
+
+.regulatory {
+  color: rgba(252, 250, 246, 0.44);
+  font-size: var(--text-12);
+  line-height: var(--leading-normal);
+  max-width: 52rem;
+}
+
+.legalMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+  color: rgba(252, 250, 246, 0.44);
+  font-size: var(--text-12);
+}
+
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.legalLinks a {
+  color: rgba(252, 250, 246, 0.56);
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.legalLinks a:hover {
+  color: var(--color-brass-soft);
+}
+
+@media (max-width: 1040px) {
+  .mainGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-48);
+  }
+}
+
+@media (max-width: 560px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-40);
+  }
+
+  .legalMeta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,52 @@
+.section {
+  padding-block: clamp(var(--space-80), 12vh, var(--space-160));
+  background: var(--color-paper);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(var(--space-48), 8vw, var(--space-120));
+  align-items: start;
+}
+
+.header {
+  position: sticky;
+  top: 7rem;
+  display: grid;
+  gap: var(--space-20);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-32), 4.5vw, var(--text-56));
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  font-weight: 400;
+}
+
+.body {
+  display: grid;
+  gap: var(--space-24);
+  /* Warm brass architectural accent rule matching Phase 3-6 */
+  border-left: 2px solid rgba(216, 189, 136, 0.35);
+  padding-left: clamp(var(--space-20), 3vw, var(--space-32));
+}
+
+.paragraph {
+  color: var(--color-muted);
+  font-size: var(--text-18);
+  line-height: var(--leading-normal);
+}
+
+@media (max-width: 860px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-48);
+  }
+
+  .header {
+    position: static;
+  }
+}

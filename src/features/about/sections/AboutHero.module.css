@@ -1,0 +1,68 @@
+.hero {
+  position: relative;
+  background: var(--color-night);
+  color: var(--color-porcelain);
+  padding-block: clamp(var(--space-80), 14vh, var(--space-160)) clamp(var(--space-64), 10vh, var(--space-120));
+  border-bottom: 1px solid rgba(252, 250, 246, 0.08);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+}
+
+.copy {
+  display: grid;
+  max-width: 52rem;
+  gap: var(--space-24);
+  /* Accent architectural left border */
+  border-left: 2px solid rgba(216, 189, 136, 0.35);
+  padding-left: clamp(var(--space-20), 4vw, var(--space-40));
+  animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 150ms both;
+}
+
+.copy h1 {
+  color: var(--color-porcelain);
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-44), 6.5vw, var(--text-72));
+  line-height: var(--leading-tight);
+  font-weight: 400;
+}
+
+.copy p {
+  color: rgba(252, 250, 246, 0.76);
+  font-size: clamp(var(--text-18), 2.2vw, var(--text-20));
+  line-height: var(--leading-normal);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+  padding-top: var(--space-16);
+}
+
+@keyframes heroReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 560px) {
+  .copy {
+    padding-left: var(--space-16);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copy {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

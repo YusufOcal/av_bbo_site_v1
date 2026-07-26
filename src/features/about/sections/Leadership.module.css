@@ -1,0 +1,102 @@
+.section {
+  padding-block: clamp(var(--space-80), 12vh, var(--space-160));
+  background: var(--color-porcelain);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.header {
+  display: grid;
+  gap: var(--space-20);
+  max-width: 44rem;
+  margin-bottom: var(--space-64);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-32), 4vw, var(--text-56));
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(var(--space-48), 6vw, var(--space-80));
+}
+
+.card {
+  display: grid;
+  gap: var(--space-20);
+  padding: var(--space-32);
+  /* Architectural vertical border accent matching Phase 3-6 */
+  border-left: 2px solid rgba(21, 20, 18, 0.1);
+  background: var(--color-paper);
+  border-radius: var(--radius-4);
+  transition:
+    border-color var(--duration-medium) var(--ease-standard),
+    background-color var(--duration-medium) var(--ease-standard);
+}
+
+.card:hover {
+  border-left-color: var(--color-brass);
+  background: #ffffff;
+}
+
+.cardHeader {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-24), 3vw, var(--text-32));
+  font-weight: 500;
+  line-height: var(--leading-snug);
+  color: var(--color-ink);
+  transition: color var(--duration-medium) var(--ease-standard);
+}
+
+.card:hover .name {
+  color: var(--color-cedar);
+}
+
+.role {
+  font-size: var(--text-12);
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+}
+
+.qualifications {
+  font-size: var(--text-13, 0.8125rem);
+  font-weight: 600;
+  color: var(--color-muted);
+  border-bottom: 1px solid var(--color-line);
+  padding-bottom: var(--space-12);
+}
+
+.bio {
+  color: var(--color-muted);
+  font-size: var(--text-16);
+  line-height: var(--leading-normal);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-40);
+  }
+
+  .card {
+    padding: var(--space-24);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .name {
+    transition: none;
+  }
+}

@@ -1,0 +1,49 @@
+<svg width="1800" height="1200" viewBox="0 0 1800 1200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Refined private law office interior</title>
+  <desc id="desc">An abstract architectural composition of a contemporary legal office with shelves, glass, stone, and a long table.</desc>
+  <rect width="1800" height="1200" fill="#171815"/>
+  <rect x="0" y="0" width="1800" height="1200" fill="url(#roomGlow)" opacity="0.92"/>
+  <path d="M0 190H1800V1200H0V190Z" fill="#25251F"/>
+  <path d="M0 0H1800V290H0V0Z" fill="#10120F"/>
+  <path d="M1320 96H1745V1025H1320V96Z" fill="#CED7D4" opacity="0.12"/>
+  <path d="M1368 142H1710V980H1368V142Z" stroke="#F3E6C9" stroke-opacity="0.2" stroke-width="4"/>
+  <path d="M1450 142V980M1540 142V980M1630 142V980M1368 420H1710M1368 700H1710" stroke="#F3E6C9" stroke-opacity="0.18" stroke-width="3"/>
+  <path d="M68 164H1230V915H68V164Z" fill="#2A211B"/>
+  <path d="M118 210H304V854H118V210ZM336 210H522V854H336V210ZM554 210H740V854H554V210ZM772 210H958V854H772V210ZM990 210H1176V854H990V210Z" fill="#3A2A21"/>
+  <path d="M118 318H1176M118 430H1176M118 542H1176M118 654H1176M118 766H1176" stroke="#C59B63" stroke-opacity="0.22" stroke-width="5"/>
+  <path d="M151 247H254V302H151V247ZM373 247H485V302H373V247ZM594 247H707V302H594V247ZM817 247H918V302H817V247ZM1032 247H1139V302H1032V247Z" fill="#7B5B43" opacity="0.62"/>
+  <path d="M148 356H284V407H148V356ZM361 356H504V407H361V356ZM579 356H723V407H579V356ZM799 356H935V407H799V356ZM1019 356H1148V407H1019V356Z" fill="#9D784F" opacity="0.48"/>
+  <path d="M145 468H259V520H145V468ZM376 468H497V520H376V468ZM584 468H715V520H584V468ZM812 468H914V520H812V468ZM1036 468H1140V520H1036V468Z" fill="#6E4E3B" opacity="0.74"/>
+  <path d="M151 579H280V632H151V579ZM371 579H488V632H371V579ZM595 579H710V632H595V579ZM810 579H929V632H810V579ZM1028 579H1138V632H1028V579Z" fill="#B48B59" opacity="0.4"/>
+  <path d="M145 690H273V742H145V690ZM365 690H499V742H365V690ZM586 690H722V742H586V690ZM806 690H934V742H806V690ZM1026 690H1143V742H1026V690Z" fill="#866142" opacity="0.56"/>
+  <path d="M0 884H1800V1200H0V884Z" fill="#1B1A17"/>
+  <path d="M278 788H1392L1576 1068H126L278 788Z" fill="#513929"/>
+  <path d="M358 826H1328L1438 1006H238L358 826Z" fill="url(#tableTop)"/>
+  <path d="M420 860H774L836 908H485L420 860Z" fill="#E2D5C2" opacity="0.58"/>
+  <path d="M458 884H840" stroke="#564333" stroke-opacity="0.62" stroke-width="3"/>
+  <path d="M1010 858H1198L1225 902H1036L1010 858Z" fill="#E9DDCB" opacity="0.5"/>
+  <path d="M1030 878H1213" stroke="#5B4633" stroke-opacity="0.52" stroke-width="3"/>
+  <path d="M1215 782C1246 761 1296 761 1332 782L1359 798C1320 821 1250 821 1191 798L1215 782Z" fill="#C09A60" opacity="0.36"/>
+  <path d="M126 1068H1576V1200H126V1068Z" fill="#110F0D" opacity="0.82"/>
+  <path d="M60 151L1264 151" stroke="#D5B06E" stroke-opacity="0.3" stroke-width="2"/>
+  <path d="M60 913L1244 913" stroke="#D5B06E" stroke-opacity="0.2" stroke-width="2"/>
+  <path d="M1318 96L1318 1034" stroke="#F6F0E3" stroke-opacity="0.18" stroke-width="2"/>
+  <rect x="0" y="0" width="1800" height="1200" fill="url(#vignette)"/>
+  <defs>
+    <linearGradient id="roomGlow" x1="271" y1="66" x2="1390" y2="1172" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#604027" stop-opacity="0.45"/>
+      <stop offset="0.48" stop-color="#1B1E1A" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#7E8C8B" stop-opacity="0.18"/>
+    </linearGradient>
+    <linearGradient id="tableTop" x1="238" y1="825" x2="1395" y2="1008" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7A5539"/>
+      <stop offset="0.5" stop-color="#4E3526"/>
+      <stop offset="1" stop-color="#9B7446"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(937 582) rotate(90) scale(763 1170)">
+      <stop offset="0.38" stop-color="#151412" stop-opacity="0"/>
+      <stop offset="0.78" stop-color="#151412" stop-opacity="0.46"/>
+      <stop offset="1" stop-color="#151412" stop-opacity="0.78"/>
+    </radialGradient>
+  </defs>
+</svg>

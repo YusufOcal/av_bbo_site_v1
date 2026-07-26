@@ -1,0 +1,120 @@
+.section {
+  background: var(--color-night);
+  color: var(--color-porcelain);
+  padding-block: clamp(var(--space-80), 12vh, var(--space-160));
+  border-bottom: 1px solid rgba(252, 250, 246, 0.04);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(var(--space-64), 10vw, var(--space-120));
+  align-items: start;
+}
+
+.intro {
+  display: grid;
+  gap: var(--space-40);
+}
+
+.intro h2 {
+  color: var(--color-porcelain);
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-32), 4.5vw, var(--text-56));
+  line-height: var(--leading-tight);
+  font-weight: 400;
+  max-width: 15ch;
+}
+
+.introCopy {
+  display: grid;
+  gap: var(--space-24);
+  max-width: 38rem;
+  /* Thin vertical accent line - subtle architectural reference */
+  border-left: 2px solid rgba(216, 189, 136, 0.22);
+  padding-left: var(--space-24);
+}
+
+.introCopy p {
+  color: rgba(252, 250, 246, 0.72);
+  font-size: var(--text-18);
+  line-height: var(--leading-normal);
+}
+
+.action {
+  margin-top: var(--space-12);
+}
+
+.stepsContainer {
+  display: grid;
+  gap: var(--space-32);
+  margin-top: var(--space-8);
+}
+
+.stepsHeader {
+  border-bottom: 1px solid rgba(252, 250, 246, 0.12);
+  padding-bottom: var(--space-16);
+}
+
+.stepsLabel {
+  font-size: var(--text-12);
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-brass-soft);
+}
+
+.steps {
+  display: grid;
+  gap: var(--space-40);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-24);
+  align-items: start;
+}
+
+.stepNumber {
+  font-family: var(--font-serif);
+  font-size: var(--text-24);
+  color: var(--color-brass-soft);
+  opacity: 0.85;
+  line-height: 1.1;
+  font-weight: 300;
+}
+
+.stepText {
+  color: rgba(252, 250, 246, 0.86);
+  font-family: var(--font-sans);
+  font-size: var(--text-18);
+  line-height: var(--leading-snug);
+  font-weight: 450;
+}
+
+/* Responsive behavior matching standard breakpoints */
+@media (max-width: 860px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-64);
+  }
+
+  .introCopy {
+    max-width: 100%;
+  }
+
+  .stepsContainer {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .step {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}

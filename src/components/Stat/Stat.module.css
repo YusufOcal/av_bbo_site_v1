@@ -1,0 +1,23 @@
+.stat {
+  display: grid;
+  min-width: 0;
+  gap: var(--space-8);
+}
+
+.stat strong {
+  color: var(--color-porcelain);
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-32), 5vw, var(--text-56));
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.stat span {
+  color: rgba(252, 250, 246, 0.68);
+  font-size: var(--text-12);
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
