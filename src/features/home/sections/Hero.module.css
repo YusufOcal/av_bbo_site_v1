@@ -41,12 +41,12 @@
   height: auto;
   object-fit: contain;
   transform-origin: 55% 18%;
+  filter: contrast(1.35) brightness(1.25) saturate(1.45) drop-shadow(0 0 60px rgba(216, 189, 136, 0.85)) drop-shadow(0 0 120px rgba(179, 136, 80, 0.6));
 }
 
-/* Desktop Only: Hardware-accelerated 3D pivot animation and glow */
+/* Desktop Only: Hardware-accelerated 3D pivot animation */
 @media (min-width: 861px) {
   .watermark img {
-    filter: contrast(1.35) brightness(1.22) saturate(1.4) drop-shadow(0 0 70px rgba(216, 189, 136, 0.85)) drop-shadow(0 0 140px rgba(179, 136, 80, 0.6));
     animation: themisEntrance 1.6s cubic-bezier(0.16, 1, 0.3, 1) 300ms both, themis3DPivotedSway 14s cubic-bezier(0.45, 0.05, 0.55, 0.95) 1.9s infinite alternate;
     will-change: transform;
   }
@@ -166,12 +166,14 @@
     padding-block: var(--space-80) var(--space-64);
   }
 
-  /* Mobile: Completely static watermark without 3D animations or heavy drop-shadows */
+  /* Mobile: Vibrant gold glow preserved, but purely static (no GPU-choking 3D animation loop) */
   .watermark {
-    width: clamp(16rem, 50vw, 24rem);
+    width: clamp(22rem, 72vw, 36rem);
     left: auto;
-    right: -1rem;
-    opacity: 0.2;
+    right: -8%;
+    top: 52%;
+    transform: translateY(-50%);
+    opacity: 0.85;
     pointer-events: none;
     user-select: none;
   }
@@ -179,7 +181,7 @@
   .watermark img {
     animation: none !important;
     transform: none !important;
-    filter: contrast(1.1) brightness(1.1) !important;
+    filter: contrast(1.35) brightness(1.25) saturate(1.45) drop-shadow(0 0 45px rgba(216, 189, 136, 0.8)) drop-shadow(0 0 90px rgba(179, 136, 80, 0.55));
   }
 }
 
@@ -190,6 +192,12 @@
 
   .copy h1 {
     max-width: none;
+  }
+
+  .watermark {
+    width: clamp(20rem, 70vw, 28rem);
+    right: -12%;
+    opacity: 0.82;
   }
 }
 
