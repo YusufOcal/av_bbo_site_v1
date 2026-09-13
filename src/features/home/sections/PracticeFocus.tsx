@@ -1,5 +1,4 @@
 import { Container } from "@/components/Container/Container";
-import { Eyebrow } from "@/components/Eyebrow/Eyebrow";
 import { practiceAreas } from "@/content/firm";
 import styles from "./PracticeFocus.module.css";
 
@@ -9,14 +8,13 @@ export function PracticeFocus() {
       <Container className={styles.inner} width="wide">
         {/* Left Column: Editorial Header */}
         <header className={styles.header}>
-          <Eyebrow>Faaliyet Alanlarımız</Eyebrow>
           <h2 id="expertise-title" className={styles.title}>
             İş dünyası için kritik hukuki süreçlerde odaklanmış danışmanlık.
           </h2>
           <div className={styles.headerCopy}>
             <p>
-              Kıdemli ortaklarımızın her dosyaya bizzat odaklanabilmesi için danışmanlık kapasitemizi bilinçli
-              olarak seçici tutuyoruz.
+              Dosyaların her aşamasına bizzat ve doğrudan odaklanabilmek adına danışmanlık kapasitemizi
+              bilinçli olarak seçici tutuyoruz.
             </p>
           </div>
         </header>

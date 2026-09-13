@@ -20,7 +20,7 @@
 
 .title {
   font-family: var(--font-serif);
-  font-size: clamp(var(--text-32), 4.5vw, var(--text-56));
+  font-size: clamp(var(--text-32), 3.5vw, var(--text-44));
   line-height: var(--leading-tight);
   color: var(--color-ink);
   font-weight: 500;
@@ -34,7 +34,7 @@
 
 .headerCopy p {
   color: var(--color-muted);
-  font-size: var(--text-18);
+  font-size: var(--text-16);
   line-height: var(--leading-normal);
 }
 

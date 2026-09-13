@@ -15,7 +15,7 @@
 .body h2 {
   color: var(--color-ink);
   font-family: var(--font-serif);
-  font-size: clamp(var(--text-32), 4vw, var(--text-56));
+  font-size: clamp(var(--text-32), 3.5vw, var(--text-44));
   font-weight: 500;
   line-height: var(--leading-tight);
 }
@@ -23,6 +23,6 @@
 .body p {
   max-width: 39rem;
   color: var(--color-muted);
-  font-size: var(--text-18);
+  font-size: var(--text-16);
   line-height: var(--leading-normal);
 }

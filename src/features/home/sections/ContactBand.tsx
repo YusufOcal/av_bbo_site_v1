@@ -17,14 +17,14 @@ export function ContactBand() {
         </div>
         <div className={styles.protocolBox}>
           <p className={styles.protocolLead}>
-            Hassas şirket satın almaları, ticari uyuşmazlıklar veya yönetim kurulu danışmanlıkları için
-            kıdemli ortaklarımız doğrudan, gizlilik esasına dayalı inceleme sağlar.
+            Hassas şirket alımları, ticari uyuşmazlıklar veya kurumsal danışmanlıklar için
+            Av. Burak Berkay Özkan doğrudan, gizlilik esasına dayalı inceleme sağlar.
           </p>
 
           <div className={styles.features}>
             <div className={styles.featureItem}>
               <span className={styles.featureLabel}>Protokol</span>
-              <span className={styles.featureValue}>Doğrudan Ortak İncelemesi</span>
+              <span className={styles.featureValue}>Doğrudan Avukat İncelemesi</span>
             </div>
             <div className={styles.featureItem}>
               <span className={styles.featureLabel}>Çakışma Kontrolü</span>

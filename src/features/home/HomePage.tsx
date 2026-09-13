@@ -1,24 +1,22 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { SectionNav } from "@/components/SectionNav/SectionNav";
+import { AboutPrinciples } from "./sections/AboutPrinciples";
 import { Articles } from "./sections/Articles";
-import { ContactBand } from "./sections/ContactBand";
-import { CounselModel } from "./sections/CounselModel";
 import { Hero } from "./sections/Hero";
 import { PracticeFocus } from "./sections/PracticeFocus";
-import { Principles } from "./sections/Principles";
-import { SelectedMatters } from "./sections/SelectedMatters";
+import { UsefulLinks } from "./sections/UsefulLinks";
 
 export function HomePage() {
   useScrollReveal();
 
   return (
     <main id="main-content">
+      <SectionNav />
       <Hero />
       <PracticeFocus />
-      <CounselModel />
-      <SelectedMatters />
-      <Principles />
       <Articles />
-      <ContactBand />
+      <AboutPrinciples />
+      <UsefulLinks />
     </main>
   );
 }

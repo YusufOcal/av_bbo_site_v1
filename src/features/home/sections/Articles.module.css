@@ -5,18 +5,40 @@
 }
 
 .header {
-  display: grid;
-  gap: var(--space-20);
-  max-width: 44rem;
-  margin-bottom: var(--space-64);
+  margin-bottom: var(--space-48);
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-24);
+  flex-wrap: wrap;
 }
 
 .title {
   font-family: var(--font-serif);
-  font-size: clamp(var(--text-32), 4vw, var(--text-56));
+  font-size: clamp(var(--text-32), 3.5vw, var(--text-44));
   line-height: var(--leading-tight);
   color: var(--color-ink);
   font-weight: 500;
+}
+
+.viewAllLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-size: var(--text-13);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+  transition: color var(--duration-fast) var(--ease-standard);
+  text-decoration: none;
+}
+
+.viewAllLink:hover {
+  color: var(--color-cedar);
 }
 
 .list {
@@ -36,6 +58,8 @@
     border-left-color var(--duration-medium) var(--ease-standard),
     background-color var(--duration-medium) var(--ease-standard);
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .row:hover {
@@ -133,11 +157,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .row,
   .articleTitle,
   .arrowLink {
     transition: none;
   }
+
   .row:hover .arrowLink {
     transform: none;
   }

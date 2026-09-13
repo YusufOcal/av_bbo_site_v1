@@ -1,0 +1,144 @@
+.container {
+  position: fixed;
+  right: clamp(1rem, 2.5vw, 2.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 95;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0.25rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  user-select: none;
+  animation: fadeInNav 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+@keyframes fadeInNav {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+.lineTop {
+  width: 1px;
+  height: 2.5rem;
+  transition: background var(--duration-normal) var(--ease-standard);
+}
+
+.dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 0;
+}
+
+.dot {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    transform var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-normal) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.dot:hover {
+  transform: scale(1.5);
+}
+
+.dot:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+}
+
+.activeDot {
+  width: 7px;
+  height: 7px;
+  transform: scale(1);
+}
+
+.lineBottom {
+  width: 1px;
+  height: 2.5rem;
+  transition: background var(--duration-normal) var(--ease-standard);
+}
+
+/* ==========================================================================
+   THEME ADAPTATION: Dark Navy Sections (#hero, #principles)
+   ========================================================================== */
+.dark .lineTop {
+  background: linear-gradient(180deg, transparent, rgba(216, 189, 136, 0.4));
+}
+
+.dark .lineBottom {
+  background: linear-gradient(180deg, rgba(216, 189, 136, 0.4), transparent);
+}
+
+.dark .dot {
+  background: rgba(216, 189, 136, 0.32);
+}
+
+.dark .dot:hover {
+  background: var(--color-brass-soft);
+}
+
+.dark .activeDot {
+  background: #ffffff;
+  box-shadow:
+    0 0 8px rgba(216, 189, 136, 0.8),
+    0 0 16px rgba(179, 136, 80, 0.5);
+}
+
+/* ==========================================================================
+   THEME ADAPTATION: Light Cream Sections (#expertise, #articles, #useful-links)
+   ========================================================================== */
+.light .lineTop {
+  background: linear-gradient(180deg, transparent, rgba(179, 136, 80, 0.35));
+}
+
+.light .lineBottom {
+  background: linear-gradient(180deg, rgba(179, 136, 80, 0.35), transparent);
+}
+
+.light .dot {
+  background: rgba(179, 136, 80, 0.3);
+}
+
+.light .dot:hover {
+  background: var(--color-brass);
+}
+
+.light .activeDot {
+  background: var(--color-brass);
+  box-shadow:
+    0 0 6px rgba(179, 136, 80, 0.6),
+    0 0 12px rgba(113, 74, 50, 0.3);
+}
+
+@media (max-width: 960px) {
+  .container {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container {
+    animation: none;
+  }
+  .dot {
+    transition: none;
+  }
+}

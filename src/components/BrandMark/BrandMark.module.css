@@ -14,67 +14,71 @@
 .dark {
   --brand-color: var(--color-ink);
   --symbol-border: rgba(179, 136, 80, 0.42);
-  --symbol-text: var(--color-ink);
+  --symbol-color: var(--color-brass);
   --legal-color: var(--color-brass);
 }
 
 .light {
   --brand-color: var(--color-porcelain);
   --symbol-border: rgba(216, 189, 136, 0.5);
-  --symbol-text: var(--color-porcelain);
+  --symbol-color: var(--color-brass-soft);
   --legal-color: var(--color-brass-soft);
 }
 
-/* Scaled up BBO Monogram Symbol Container */
+/* Gold Themis Scales of Justice Container */
 .symbol {
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 3.25rem;
   height: 3.25rem;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
   border: 1.5px solid var(--symbol-border);
   border-radius: var(--radius-4);
-  color: var(--symbol-text);
-  font-family: var(--font-serif);
-  font-size: 0.95rem;
-  font-weight: 600;
-  line-height: 1;
-  text-align: center;
-  background: rgba(179, 136, 80, 0.04);
-  transition: border-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard);
+  color: var(--symbol-color);
+  background: rgba(179, 136, 80, 0.05);
+  transition:
+    border-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
 }
 
 .brand:hover .symbol {
   border-color: var(--color-brass);
-  box-shadow: 0 0 16px rgba(216, 189, 136, 0.22);
+  box-shadow: 0 0 16px rgba(216, 189, 136, 0.25);
+  transform: scale(1.02);
 }
 
-.symbol span {
-  border-right: 1.5px solid var(--symbol-border);
-  padding-block: var(--space-2);
+.scaleIcon {
+  width: 1.85rem;
+  height: 1.85rem;
+  color: inherit;
+  transition: transform var(--duration-fast) var(--ease-standard);
 }
 
-.symbol span:last-child {
-  border-right: 0;
+.brand:hover .scaleIcon {
+  transform: scale(1.05);
 }
 
-/* Scaled up BBO LEGAL Text Copy */
+/* Scaled up Brand Text Copy */
 .copy {
   display: grid;
   gap: var(--space-2);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 750;
-  letter-spacing: 0.2em;
-  line-height: 1.1;
+  letter-spacing: 0.14em;
+  line-height: 1.15;
   text-transform: uppercase;
 }
 
 .copy span:first-child {
   color: var(--brand-color);
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
 }
 
 .copy span:last-child {
   color: var(--legal-color);
+  font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.12em;
 }

@@ -3,16 +3,16 @@
   align-items: center;
   gap: var(--space-10);
   color: var(--eyebrow-color);
-  font-size: var(--text-12);
+  font-size: 0.8125rem;
   font-weight: 750;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   line-height: 1.2;
   text-transform: uppercase;
 }
 
 .eyebrow::before {
-  width: 2.25rem;
-  height: 1px;
+  width: 2rem;
+  height: 1.5px;
   background: currentColor;
   content: "";
 }

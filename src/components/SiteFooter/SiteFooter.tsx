@@ -34,20 +34,21 @@ export function SiteFooter() {
             <span className={styles.columnHeader}>Uzmanlık Alanlarımız</span>
             <nav className={styles.links} aria-label="Uzmanlık alanları menüsü">
               {practiceAreas.map((area) => (
-                <a href="#expertise" key={area.title}>
+                <a href="/#expertise" key={area.title}>
                   {area.title}
                 </a>
               ))}
             </nav>
           </div>
 
-          {/* Column 4: Desks & Locations */}
+          {/* Column 4: Baro Kaydı & İletişim */}
           <div className={styles.column}>
-            <span className={styles.columnHeader}>Ofis & Ağlar</span>
+            <span className={styles.columnHeader}>Avukat & İletişim</span>
             <div className={styles.metaList}>
-              <span>İstanbul Ofisi</span>
-              <span>Londra Ağı Uyumlu</span>
-              <span>Sınır Ötesi İşlem Masası</span>
+              <span>Av. Burak Berkay Özkan</span>
+              <span>İstanbul Barosu</span>
+              <span>+90 505 438 75 49</span>
+              <span>avburakberkayozkan@gmail.com</span>
             </div>
           </div>
         </div>
@@ -55,11 +56,11 @@ export function SiteFooter() {
         {/* Bottom Legal & Regulatory Bar */}
         <div className={styles.bottomBar}>
           <p className={styles.regulatory}>
-            BBO Legal, İstanbul Barosu'na kayıtlı bağımsız bir hukuk bürosudur. Tüm başvurularda müvekkil
-            gizliliği ve çakışma kontrolü (conflict check) protokolleri uygulanır.
+            Özkan Hukuk & Danışmanlık — Av. Burak Berkay Özkan, İstanbul Barosu'na kayıtlı bağımsız bir avukattır.
+            Bu internet sitesi Türkiye Barolar Birliği Avukatlık Reklam Yasağı Yönetmeliği'ne uygun olarak yalnızca bilgilendirme amacıyla hazırlanmıştır.
           </p>
           <div className={styles.legalMeta}>
-            <span>&copy; {new Date().getFullYear()} BBO Legal. Tüm hakları saklıdır.</span>
+            <span>&copy; {new Date().getFullYear()} Özkan Hukuk & Danışmanlık. Tüm hakları saklıdır.</span>
             <div className={styles.legalLinks}>
               <a href="#main-content">Gizlilik Bildirimi</a>
               <span aria-hidden="true">&bull;</span>
