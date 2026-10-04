@@ -558,9 +558,6 @@ export function AdminPage() {
                 disabled={lockoutRemaining > 0}
                 autoFocus
               />
-              <span className={styles.hint}>
-                Kriptografik SHA-256 korumalı • 5 hatalı denemede 15 dk kilit • 30 dk hareketsizlikte otomatik çıkış
-              </span>
             </div>
 
             <button
@@ -679,7 +676,7 @@ export function AdminPage() {
             className={[styles.navTab, activeTab === "backup" ? styles.navTabActive : ""].join(" ")}
             onClick={() => setActiveTab("backup")}
           >
-            ☁️ Bulut, Güvenlik & Yedek
+            ☁️ Bulut & Güvenlik
           </button>
         </aside>
 
@@ -1762,18 +1759,16 @@ export function AdminPage() {
             <>
               <div className={styles.sectionHeading}>
                 <div>
-                  <h2 className={styles.sectionTitle}>Bulut Veritabanı, Güvenlik & Yedek</h2>
-                  <p className={styles.sectionDesc}>
-                    Ücretsiz Supabase veritabanı senkronizasyonu, yönetici şifre güvenliği ve JSON dosya yedekleri
-                  </p>
+                  <h2 className={styles.sectionTitle}>Bulut & Güvenlik</h2>
+                  <p className={styles.sectionDesc}>Veritabanı bağlantısı, şifre ve yedekleme yönetimi</p>
                 </div>
               </div>
 
               {/* BÖLÜM 1: BULUT VERİTABANI */}
               <div className={styles.itemCard}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", marginBottom: "8px" }}>
-                  <h3 className={styles.label} style={{ margin: 0, fontSize: "var(--text-16)" }}>
-                    ☁️ Ücretsiz Bulut Veritabanı (Supabase) Entegrasyonu
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px" }}>
+                  <h3 className={styles.label} style={{ margin: 0, fontSize: "var(--text-15)" }}>
+                    Supabase Bulut Veritabanı
                   </h3>
                   <span
                     style={{
@@ -1786,45 +1781,38 @@ export function AdminPage() {
                       border: `1px solid ${cloudConfig.isConfigured ? "rgba(16, 185, 129, 0.3)" : "rgba(245, 158, 11, 0.3)"}`
                     }}
                   >
-                    {cloudConfig.isConfigured ? "✓ Bulut Bağlantısı Yapılandırıldı" : "⚠️ Yerel Depolama (Bulut Bağlantısı Yok)"}
+                    {cloudConfig.isConfigured ? "✓ Bulut Bağlantısı Aktif" : "Yerel Mod"}
                   </span>
                 </div>
 
-                <p className={styles.hint} style={{ marginBottom: "16px" }}>
-                  Supabase ücretsiz PostgreSQL veritabanı sayesinde panelde yapacağınız her değişiklik anında buluta yazılır ve canlı sitede tüm kullanıcılara yansır.
-                </p>
-
                 <div className={styles.formGrid}>
                   <div className={styles.formGroup}>
-                    <label className={styles.label}>Supabase Project URL</label>
+                    <label className={styles.label}>Project URL</label>
                     <input
                       type="text"
                       className={styles.input}
-                      placeholder="https://xyzabcdefg.supabase.co"
+                      placeholder="https://xyz.supabase.co"
                       value={cloudUrlInput}
                       onChange={(e) => setCloudUrlInput(e.target.value)}
                     />
-                    <span className={styles.hint}>Supabase &gt; Project Settings &gt; API kısmındaki Project URL</span>
                   </div>
 
                   <div className={styles.formGroup}>
-                    <label className={styles.label}>Supabase Anon / Public Key</label>
+                    <label className={styles.label}>Anon / Public Key</label>
                     <input
                       type="password"
                       className={styles.input}
-                      placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                      placeholder="sb_publishable_... veya eyJ..."
                       value={cloudKeyInput}
                       onChange={(e) => setCloudKeyInput(e.target.value)}
                     />
-                    <span className={styles.hint}>Anon / Public key (istemci tarafında güvenle kullanılabilir)</span>
                   </div>
                 </div>
 
                 {cloudTestResult && (
                   <div
                     style={{
-                      marginTop: "12px",
-                      padding: "10px 14px",
+                      padding: "8px 12px",
                       fontSize: "var(--text-13)",
                       borderRadius: "2px",
                       backgroundColor: cloudTestResult.success ? "rgba(16, 185, 129, 0.12)" : "rgba(220, 38, 38, 0.15)",
@@ -1837,13 +1825,13 @@ export function AdminPage() {
                   </div>
                 )}
 
-                <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginTop: "16px" }}>
+                <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", paddingTop: "4px" }}>
                   <button
                     type="button"
                     onClick={handleSaveCloudConfig}
                     className={[styles.actionBtn, styles.actionBtnPrimary].join(" ")}
                   >
-                    💾 Ayarları Kaydet
+                    Ayarları Kaydet
                   </button>
 
                   <button
@@ -1852,7 +1840,7 @@ export function AdminPage() {
                     disabled={isTestingCloud}
                     className={styles.actionBtn}
                   >
-                    {isTestingCloud ? "⏳ Test Ediliyor..." : "🧪 Bağlantıyı Test Et"}
+                    {isTestingCloud ? "Test Ediliyor..." : "Bağlantıyı Test Et"}
                   </button>
 
                   <button
@@ -1860,9 +1848,8 @@ export function AdminPage() {
                     onClick={handlePushToCloud}
                     disabled={isTestingCloud}
                     className={styles.actionBtn}
-                    title="Mevcut paneldeki tüm verileri Supabase bulut veritabanına yükler"
                   >
-                    ☁️ Mevcut İçeriği Buluta Yükle
+                    Buluta Yükle
                   </button>
 
                   <button
@@ -1870,53 +1857,32 @@ export function AdminPage() {
                     onClick={handlePullFromCloud}
                     disabled={isTestingCloud}
                     className={styles.actionBtn}
-                    title="Supabase bulut veritabanındaki en güncel verileri çeker"
                   >
-                    🔄 Buluttan Güncel İçeriği Çek
+                    Buluttan Çek
                   </button>
-                </div>
-
-                <div
-                  style={{
-                    marginTop: "16px",
-                    padding: "12px 14px",
-                    background: "rgba(0, 0, 0, 0.25)",
-                    border: "1px dashed rgba(216, 189, 136, 0.2)",
-                    fontSize: "var(--text-12)",
-                    color: "rgba(246, 242, 234, 0.7)",
-                    lineHeight: "1.6"
-                  }}
-                >
-                  <strong>💡 Supabase 1 Dakikalık Kolay Kurulum Adımları:</strong><br />
-                  1. <a href="https://supabase.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-brass-soft)", textDecoration: "underline" }}>supabase.com</a> adresinde ücretsiz bir hesap açıp <em>New project</em> butonuna tıklayın.<br />
-                  2. Sol menüden <strong>SQL Editor</strong> sekmesine gidin. Proje kökündeki <code>supabase_schema.sql</code> dosyasının içeriğini yapıştırıp <strong>Run</strong> butonuna basın.<br />
-                  3. Sol menüden <strong>Project Settings &gt; API</strong> sekmesine gidin. Oradaki <em>Project URL</em> ve <em>anon public key</em> değerlerini yukarıdaki kutucuklara yapıştırıp <strong>Kaydet</strong> ve <strong>Test Et</strong> butonlarına basın.
                 </div>
               </div>
 
-              {/* BÖLÜM 2: YÖNETİCİ ŞİFRESİ VE GÜVENLİK */}
+              {/* BÖLÜM 2: YÖNETİCİ ŞİFRESİ */}
               <div className={styles.itemCard}>
-                <h3 className={styles.label} style={{ fontSize: "var(--text-16)" }}>
-                  🔐 Yönetici Şifresi & Üst Düzey Güvenlik
+                <h3 className={styles.label} style={{ fontSize: "var(--text-15)" }}>
+                  Yönetici Şifresini Değiştir
                 </h3>
-                <p className={styles.hint}>
-                  Yönetici panelinize girişte kullanılan şifreyi değiştirin. Şifreniz tarayıcıda SHA-256 standardı ile kriptografik olarak özetlenerek saklanır.
-                </p>
 
-                <form onSubmit={handleChangePasscode} style={{ maxWidth: "480px", display: "flex", flexDirection: "column", gap: "12px", marginTop: "12px" }}>
+                <form onSubmit={handleChangePasscode} style={{ maxWidth: "480px", display: "flex", flexDirection: "column", gap: "12px" }}>
                   <div className={styles.formGroup}>
-                    <label className={styles.label}>Yeni Yönetici Şifresi</label>
+                    <label className={styles.label}>Yeni Şifre</label>
                     <input
                       type="password"
                       className={styles.input}
-                      placeholder="Yeni şifrenizi giriniz (en az 6 karakter)"
+                      placeholder="Yeni şifrenizi giriniz"
                       value={newPasscode}
                       onChange={(e) => setNewPasscode(e.target.value)}
                     />
                   </div>
 
                   <div className={styles.formGroup}>
-                    <label className={styles.label}>Yeni Şifre (Tekrar)</label>
+                    <label className={styles.label}>Yeni Şifre Tekrar</label>
                     <input
                       type="password"
                       className={styles.input}
@@ -1931,36 +1897,14 @@ export function AdminPage() {
                     className={[styles.actionBtn, styles.actionBtnPrimary].join(" ")}
                     style={{ alignSelf: "flex-start", marginTop: "4px" }}
                   >
-                    🔒 Şifreyi Güncelle & Kaydet
+                    Şifreyi Güncelle
                   </button>
                 </form>
-
-                <div
-                  style={{
-                    marginTop: "20px",
-                    paddingTop: "16px",
-                    borderTop: "1px solid rgba(216, 189, 136, 0.15)",
-                    fontSize: "var(--text-13)",
-                    color: "rgba(246, 242, 234, 0.8)",
-                    lineHeight: "1.7"
-                  }}
-                >
-                  <strong style={{ color: "var(--color-brass-soft)" }}>🛡️ Aktif Güvenlik Kalkanları:</strong>
-                  <ul style={{ margin: "8px 0 0 18px", padding: 0 }}>
-                    <li><strong>SHA-256 Kriptografik Özet:</strong> Şifreniz asla açık metin olarak kaynak kodda veya depoda tutulmaz.</li>
-                    <li><strong>Brute-Force (Kaba Kuvvet) Koruması:</strong> 5 kez üst üste hatalı deneme yapıldığında panel 15 dakika boyunca kilitlenir.</li>
-                    <li><strong>30 Dakika Hareketsizlik Kilidi:</strong> Panel açık bırakıldığında 30 dakika işlem yapılmazsa oturum otomatik sonlandırılır.</li>
-                    <li><strong>Arama Motoru Gizliliği:</strong> <code>public/robots.txt</code> dosyasıyla panel arama motoru indekslemelerine karşı engellenmiştir.</li>
-                  </ul>
-                </div>
               </div>
 
               {/* BÖLÜM 3: JSON YEDEKLEME */}
               <div className={styles.itemCard}>
-                <h3 className={styles.label}>📥 Tüm Site İçeriğini Yedekle (JSON İndir)</h3>
-                <p className={styles.hint}>
-                  Sitedeki tüm yazıları, makaleleri ve ayarları bilgisayarınıza tek bir dosya olarak indirir. Başka bir bilgisayara aktarırken kullanabilirsiniz.
-                </p>
+                <h3 className={styles.label}>JSON Yedek İndir</h3>
                 <button
                   type="button"
                   onClick={exportContentAsJson}
@@ -1972,10 +1916,7 @@ export function AdminPage() {
               </div>
 
               <div className={styles.itemCard}>
-                <h3 className={styles.label}>📤 Yedek Dosyası Yükle (JSON Geri Yükle)</h3>
-                <p className={styles.hint}>
-                  Daha önce indirdiğiniz bir yedek dosyasını seçerek sitedeki tüm yazıları tek tıkla geri yükleyin.
-                </p>
+                <h3 className={styles.label}>JSON Yedek Geri Yükle</h3>
                 <input
                   type="file"
                   accept=".json"
@@ -2003,14 +1944,11 @@ export function AdminPage() {
               </div>
 
               {/* BÖLÜM 4: SIFIRLA */}
-              <div className={styles.itemCard} style={{ borderColor: "rgba(239, 68, 68, 0.4)" }}>
-                <h3 className={styles.label} style={{ color: "#f87171" }}>⚠️ Orijinal İçeriklere Sıfırla</h3>
-                <p className={styles.hint}>
-                  Yapılan tüm değişiklikleri silerek sitenin en baştaki orijinal tasarım ve yazılarına geri döner.
-                </p>
+              <div className={styles.itemCard} style={{ borderColor: "rgba(239, 68, 68, 0.3)" }}>
+                <h3 className={styles.label} style={{ color: "#f87171" }}>Fabrika Ayarlarına Sıfırla</h3>
                 {deleteConfirm?.type === "reset" ? (
-                  <div className={styles.confirmBox} style={{ padding: "10px 14px", alignSelf: "flex-start" }}>
-                    <span className={styles.confirmText}>Fabrika yazılarına dönmek istediğinize emin misiniz?</span>
+                  <div className={styles.confirmBox} style={{ padding: "8px 12px", alignSelf: "flex-start" }}>
+                    <span className={styles.confirmText}>Tüm yazılar ilk haline dönecek. Emin misiniz?</span>
                     <button
                       type="button"
                       className={[styles.actionBtn, styles.deleteBtnConfirm].join(" ")}
@@ -2031,10 +1969,10 @@ export function AdminPage() {
                   <button
                     type="button"
                     className={styles.deleteBtn}
-                    style={{ alignSelf: "flex-start", padding: "10px 20px" }}
+                    style={{ alignSelf: "flex-start", padding: "8px 16px" }}
                     onClick={() => setDeleteConfirm({ type: "reset", index: 0, title: "reset" })}
                   >
-                    Fabrika Ayarlarına Dön
+                    Orijinal İçeriklere Sıfırla
                   </button>
                 )}
               </div>
