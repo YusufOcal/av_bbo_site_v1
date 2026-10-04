@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /bbolegal-adminpanel
+Disallow: /bbolegal-adminpanel/
+Disallow: /admin
+Disallow: /admin/
+Allow: /

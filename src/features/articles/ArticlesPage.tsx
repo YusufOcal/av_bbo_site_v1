@@ -1,17 +1,38 @@
 import { useState, useMemo } from "react";
 import { Container } from "@/components/Container/Container";
-import { fullArticles, articleCategories, type Article } from "@/content/articles";
+import { useSiteContent } from "@/context/ContentContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import type { ArticleItem } from "@/types/content";
 import styles from "./ArticlesPage.module.css";
 
 export function ArticlesPage() {
   useScrollReveal();
+  const { content } = useSiteContent();
+  const { articles, categories, pageTitle, pageDescription } = content.articlesSection;
 
   const [selectedCategory, setSelectedCategory] = useState<string>("Tümü");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
+  const availableCategories = useMemo(() => {
+    const list = ["Tümü"];
+    const seen = new Set<string>(["Tümü"]);
+    (categories || []).forEach((c) => {
+      if (c && !seen.has(c)) {
+        seen.add(c);
+        list.push(c);
+      }
+    });
+    articles.forEach((a) => {
+      if (a.category && !seen.has(a.category.trim())) {
+        seen.add(a.category.trim());
+        list.push(a.category.trim());
+      }
+    });
+    return list;
+  }, [categories, articles]);
+
   const filteredArticles = useMemo(() => {
-    return fullArticles.filter((item) => {
+    return articles.filter((item) => {
       const matchesCategory =
         selectedCategory === "Tümü" || item.category === selectedCategory;
       const matchesSearch =
@@ -21,16 +42,25 @@ export function ArticlesPage() {
         item.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
       return matchesCategory && matchesSearch;
     });
-  }, [selectedCategory, searchQuery]);
+  }, [articles, selectedCategory, searchQuery]);
 
   return (
     <main id="main-content">
       <section className={styles.section} aria-labelledby="articles-page-title" data-reveal>
         <Container width="wide">
+          <header style={{ marginBottom: "var(--space-32)" }}>
+            <h1 id="articles-page-title" style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(var(--text-32), 4vw, var(--text-48))", color: "var(--color-paper)", marginBottom: "var(--space-12)" }}>
+              {pageTitle}
+            </h1>
+            <p style={{ color: "rgba(246, 242, 234, 0.7)", maxWidth: "720px", fontSize: "var(--text-16)", lineHeight: "1.6" }}>
+              {pageDescription}
+            </p>
+          </header>
+
           {/* Controls Bar: Category Pills & Search */}
           <div className={styles.controlsBar}>
             <div className={styles.categories} role="tablist" aria-label="Kategoriler">
-              {articleCategories.map((cat) => (
+              {availableCategories.map((cat) => (
                 <button
                   key={cat}
                   type="button"
@@ -79,7 +109,7 @@ export function ArticlesPage() {
                 <p>Aradığınız kriterlere uygun makale bulunamadı.</p>
               </div>
             ) : (
-              filteredArticles.map((article: Article) => (
+              filteredArticles.map((article: ArticleItem) => (
                 <a
                   key={article.id}
                   href={`/makale/${article.slug}`}

@@ -1,9 +1,12 @@
 import grandThemisStatue from "@/assets/visuals/grand-themis-statue.png";
 import { Container } from "@/components/Container/Container";
-import { principles } from "@/content/firm";
+import { useSiteContent } from "@/context/ContentContext";
 import styles from "./AboutPrinciples.module.css";
 
 export function AboutPrinciples() {
+  const { content } = useSiteContent();
+  const { sectionTitle, paragraphs, principlesLabel, principles } = content.aboutPrinciples;
+
   return (
     <section
       className={styles.section}
@@ -19,32 +22,20 @@ export function AboutPrinciples() {
         {/* Left Column: Firm Story & Direct Ethos */}
         <div className={styles.intro}>
           <h2 id="principles-title" className={styles.title}>
-            Stratejik vizyon, doğrudan avukat takibi ve tavizsiz meslek etiği.
+            {sectionTitle}
           </h2>
 
           <div className={styles.story}>
-            <p>
-              <strong>Özkan Hukuk & Danışmanlık</strong>; geleneksel hiyerarşik
-              ve çok katmanlı büro yapılarının aksine, her sürecin doğrudan ve
-              şeffaf yürütüldüğü bir danışmanlık anlayışıyla hareket eder.
-            </p>
-            <p>
-              En etkili hukuki sonucun; dosyanın başlangıcından neticelenmesine
-              kadar bizzat yürütülen titiz hazırlık, proaktif iletişim ve ticari
-              dinamiklere uygun stratejik yaklaşımla elde edildiğine inanıyoruz.
-            </p>
-            <p>
-              Müvekkillerimizin kurumsal hedeflerini korumak ve hukuki riskleri
-              öngörülebilir kılmak için 4 temel mesleki ilke çerçevesinde
-              hizmet sunuyoruz.
-            </p>
+            {paragraphs.map((p, idx) => (
+              <p key={idx}>{p}</p>
+            ))}
           </div>
         </div>
 
         {/* Right Column: 4 Pillars of Principles */}
         <div className={styles.principlesContainer}>
           <div className={styles.principlesHeader}>
-            <span className={styles.principlesLabel}>Temel Çalışma İlkelerimiz</span>
+            <span className={styles.principlesLabel}>{principlesLabel}</span>
           </div>
 
           <div className={styles.grid}>

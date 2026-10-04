@@ -5,31 +5,57 @@ import { WhatsAppButton } from "@/components/WhatsAppButton/WhatsAppButton";
 import { HomePage } from "@/features/home/HomePage";
 import { ArticlesPage } from "@/features/articles/ArticlesPage";
 import { ArticleDetailPage } from "@/features/articles/ArticleDetailPage";
+import { AdminPage } from "@/features/admin/AdminPage";
+import { ContentProvider } from "@/context/ContentContext";
 
 type RouteState =
   | { type: "home" }
   | { type: "articles" }
-  | { type: "article-detail"; slug: string };
+  | { type: "article-detail"; slug: string }
+  | { type: "admin" };
 
 function getRouteFromLocation(): RouteState {
   const path = window.location.pathname.toLowerCase();
+  const hash = window.location.hash.toLowerCase();
 
-  // Check for single article detail: /makale/:slug
-  if (path.startsWith("/makale/")) {
-    const slug = path.replace("/makale/", "").replace(/\/$/, "");
-    if (slug) {
-      return { type: "article-detail", slug };
-    }
+  // 1. Secret Admin route: /bbolegal-adminpanel or #bbolegal-adminpanel
+  if (
+    path === "/bbolegal-adminpanel" ||
+    path.startsWith("/bbolegal-adminpanel/") ||
+    hash === "#bbolegal-adminpanel"
+  ) {
+    return { type: "admin" };
   }
 
-  if (path.includes("makale") || path.includes("articles")) {
+  // 2. Articles list: /makaleler or /articles
+  if (
+    path === "/makaleler" ||
+    path === "/makaleler/" ||
+    path === "/articles" ||
+    path === "/articles/" ||
+    hash === "#makaleler"
+  ) {
+    return { type: "articles" };
+  }
+
+  // 3. Single article detail: MUST start with /makale/ and have a slug
+  if (path.startsWith("/makale/")) {
+    const raw = path.slice(8).replace(/\/$/, "").trim(); // removes "/makale/"
+    if (raw) {
+      try {
+        const slug = decodeURIComponent(raw);
+        return { type: "article-detail", slug };
+      } catch {
+        return { type: "article-detail", slug: raw };
+      }
+    }
     return { type: "articles" };
   }
 
   return { type: "home" };
 }
 
-export function App() {
+function MainAppShell() {
   const [route, setRoute] = useState<RouteState>(getRouteFromLocation);
 
   const handleNavigation = useCallback(() => {
@@ -51,7 +77,6 @@ export function App() {
   // Global link click interceptor for smooth SPA experience without page reload
   useEffect(() => {
     const handleLinkClick = (event: MouseEvent) => {
-      // Don't intercept if modified click (cmd, ctrl, shift, etc.) or right click
       if (
         event.defaultPrevented ||
         event.button !== 0 ||
@@ -63,7 +88,6 @@ export function App() {
         return;
       }
 
-      // Find closest <a> tag
       const target = event.target as HTMLElement | null;
       const anchor = target?.closest("a");
 
@@ -105,7 +129,7 @@ export function App() {
           return;
         }
 
-        // Standard path navigation (e.g. /makaleler, /makale/..., or /)
+        // Standard path navigation (e.g. /admin, /makaleler, /makale/..., or /)
         window.history.pushState({}, "", href);
         const nextRoute = getRouteFromLocation();
         setRoute(nextRoute);
@@ -121,8 +145,12 @@ export function App() {
           return;
         }
 
+        if (targetId === "bbolegal-adminpanel") {
+          setRoute({ type: "admin" });
+          return;
+        }
+
         if (route.type !== "home") {
-          // If not on home, go home then scroll to anchor
           event.preventDefault();
           window.history.pushState({}, "", "/");
           setRoute({ type: "home" });
@@ -140,6 +168,10 @@ export function App() {
     };
   }, [route]);
 
+  if (route.type === "admin") {
+    return <AdminPage />;
+  }
+
   return (
     <div className="app-shell">
       <a href="#main-content" className="skip-link">
@@ -152,5 +184,13 @@ export function App() {
       <SiteFooter />
       <WhatsAppButton />
     </div>
+  );
+}
+
+export function App() {
+  return (
+    <ContentProvider>
+      <MainAppShell />
+    </ContentProvider>
   );
 }

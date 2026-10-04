@@ -1,8 +1,11 @@
 import { Container } from "@/components/Container/Container";
-import { usefulLinks } from "@/content/firm";
+import { useSiteContent } from "@/context/ContentContext";
 import styles from "./UsefulLinks.module.css";
 
 export function UsefulLinks() {
+  const { content } = useSiteContent();
+  const { sectionTitle, sectionDescription, links } = content.usefulLinks;
+
   return (
     <section
       className={styles.section}
@@ -13,18 +16,15 @@ export function UsefulLinks() {
       <Container width="wide">
         <header className={styles.header}>
           <h2 id="useful-links-title" className={styles.title}>
-            Müvekkillerimiz ve ilgililer için faydalı kurumsal bağlantılar.
+            {sectionTitle}
           </h2>
           <div className={styles.headerCopy}>
-            <p>
-              Yargı organları, resmi mevzuat platformları ve mesleki kuruluşlara ait
-              resmi erişim adresleri derlenmiştir.
-            </p>
+            <p>{sectionDescription}</p>
           </div>
         </header>
 
         <div className={styles.grid}>
-          {usefulLinks.map((link) => (
+          {links.map((link) => (
             <a
               key={link.title}
               href={link.url}

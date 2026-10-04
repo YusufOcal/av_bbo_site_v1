@@ -2,9 +2,13 @@ import officeVisual from "@/assets/visuals/private-office.svg";
 import grandThemisStatue from "@/assets/visuals/grand-themis-statue.png";
 import { Button } from "@/components/Button/Button";
 import { Container } from "@/components/Container/Container";
+import { useSiteContent } from "@/context/ContentContext";
 import styles from "./Hero.module.css";
 
 export function Hero() {
+  const { content } = useSiteContent();
+  const { title, description, buttonLabel, buttonHref } = content.hero;
+
   return (
     <section className={styles.hero} id="hero" aria-labelledby="hero-title">
       <div className={styles.media} aria-hidden="true">
@@ -15,12 +19,10 @@ export function Hero() {
       </div>
       <Container className={styles.inner} width="wide">
         <div className={styles.copy}>
-          <h1 id="hero-title">Stratejik ve sonuç odaklı avukatlık danışmanlığı.</h1>
-          <p>
-            Özkan Hukuk & Danışmanlık; ticari uyuşmazlıklar, sözleşmeler ve kurumsal süreçlerde doğrudan ve titiz bir avukatlık hizmeti sunar.
-          </p>
+          <h1 id="hero-title">{title}</h1>
+          <p>{description}</p>
           <div className={styles.actions}>
-            <Button href="#expertise">Faaliyet Alanlarını İnceleyin</Button>
+            <Button href={buttonHref}>{buttonLabel}</Button>
           </div>
         </div>
       </Container>

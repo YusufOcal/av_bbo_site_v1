@@ -1,3 +1,4 @@
+import { useSiteContent } from "@/context/ContentContext";
 import styles from "./BrandMark.module.css";
 
 type BrandMarkProps = {
@@ -5,11 +6,15 @@ type BrandMarkProps = {
 };
 
 export function BrandMark({ tone = "dark" }: BrandMarkProps) {
+  const { content } = useSiteContent();
+  const brandName = content.general.brandName;
+  const brandSubtitle = content.general.brandSubtitle;
+
   return (
     <a
       className={[styles.brand, styles[tone]].join(" ")}
       href="/"
-      aria-label="Özkan Hukuk & Danışmanlık"
+      aria-label={`${brandName} ${brandSubtitle}`}
     >
       <span className={styles.symbol} aria-hidden="true">
         <svg
@@ -37,8 +42,8 @@ export function BrandMark({ tone = "dark" }: BrandMarkProps) {
         </svg>
       </span>
       <span className={styles.copy}>
-        <span>Özkan</span>
-        <span>Hukuk & Danışmanlık</span>
+        <span>{brandName}</span>
+        <span>{brandSubtitle}</span>
       </span>
     </a>
   );

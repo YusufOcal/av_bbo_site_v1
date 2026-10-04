@@ -1,4 +1,4 @@
-import { fullArticles } from "@/content/articles";
+import { useSiteContent } from "@/context/ContentContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import styles from "./ArticleDetailPage.module.css";
 
@@ -8,9 +8,15 @@ interface ArticleDetailPageProps {
 
 export function ArticleDetailPage({ slug }: ArticleDetailPageProps) {
   useScrollReveal();
+  const { content } = useSiteContent();
+  const { articles } = content.articlesSection;
 
-  const article = fullArticles.find(
-    (a) => a.slug === slug || a.id === slug
+  const article = articles.find(
+    (a) =>
+      a.slug === slug ||
+      a.id === slug ||
+      a.slug.toLowerCase() === slug.toLowerCase() ||
+      encodeURIComponent(a.slug) === encodeURIComponent(slug)
   );
 
   if (!article) {

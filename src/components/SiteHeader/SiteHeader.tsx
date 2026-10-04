@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrandMark } from "@/components/BrandMark/BrandMark";
 import { Container } from "@/components/Container/Container";
-import { navItems } from "@/content/firm";
+import { useSiteContent } from "@/context/ContentContext";
 import styles from "./SiteHeader.module.css";
 
 interface SiteHeaderProps {
@@ -9,6 +9,10 @@ interface SiteHeaderProps {
 }
 
 export function SiteHeader({ theme = "light" }: SiteHeaderProps) {
+  const { content } = useSiteContent();
+  const navItems = content.navigation.items;
+  const { phone, email } = content.general;
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -66,8 +70,8 @@ export function SiteHeader({ theme = "light" }: SiteHeaderProps) {
         <div className={styles.contactGroup}>
           <a
             className={styles.contactPhone}
-            href="tel:+905054387549"
-            aria-label="Telefon: +90 505 438 75 49"
+            href={`tel:${phone.replace(/\s+/g, "")}`}
+            aria-label={`Telefon: ${phone}`}
           >
             <svg
               className={styles.contactIcon}
@@ -83,13 +87,13 @@ export function SiteHeader({ theme = "light" }: SiteHeaderProps) {
             >
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
-            <span>+90 505 438 75 49</span>
+            <span>{phone}</span>
           </a>
           <span className={styles.contactDivider} aria-hidden="true" />
           <a
             className={styles.contactEmail}
-            href="mailto:avburakberkayozkan@gmail.com"
-            aria-label="E-posta: avburakberkayozkan@gmail.com"
+            href={`mailto:${email}`}
+            aria-label={`E-posta: ${email}`}
           >
             <svg
               className={styles.contactIcon}
@@ -106,7 +110,7 @@ export function SiteHeader({ theme = "light" }: SiteHeaderProps) {
               <rect width="20" height="16" x="2" y="4" rx="2" />
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
             </svg>
-            <span>avburakberkayozkan@gmail.com</span>
+            <span>{email}</span>
           </a>
         </div>
 
@@ -149,17 +153,17 @@ export function SiteHeader({ theme = "light" }: SiteHeaderProps) {
               <span className={styles.drawerLabel}>İletişim & Danışma</span>
               <a
                 className={styles.drawerContact}
-                href="tel:+905054387549"
+                href={`tel:${phone.replace(/\s+/g, "")}`}
                 onClick={closeMenu}
               >
-                +90 505 438 75 49
+                {phone}
               </a>
               <a
                 className={styles.drawerContact}
-                href="mailto:avburakberkayozkan@gmail.com"
+                href={`mailto:${email}`}
                 onClick={closeMenu}
               >
-                avburakberkayozkan@gmail.com
+                {email}
               </a>
             </div>
           </Container>
