@@ -74,12 +74,12 @@ export function AdminPage() {
   } = useSiteContent();
 
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
-    const isAuth = localStorage.getItem(ADMIN_STORAGE_KEY) === "true";
+    const isAuth = sessionStorage.getItem(ADMIN_STORAGE_KEY) === "true";
     if (!isAuth) return false;
-    const lastActivity = Number(localStorage.getItem(LAST_ACTIVITY_KEY) || "0");
+    const lastActivity = Number(sessionStorage.getItem(LAST_ACTIVITY_KEY) || "0");
     if (lastActivity > 0 && Date.now() - lastActivity > INACTIVITY_TIMEOUT_MS) {
-      localStorage.removeItem(ADMIN_STORAGE_KEY);
-      localStorage.removeItem(LAST_ACTIVITY_KEY);
+      sessionStorage.removeItem(ADMIN_STORAGE_KEY);
+      sessionStorage.removeItem(LAST_ACTIVITY_KEY);
       return false;
     }
     return true;
@@ -141,18 +141,18 @@ export function AdminPage() {
     if (!isAuthenticated) return;
 
     let lastRecorded = Date.now();
-    localStorage.setItem(LAST_ACTIVITY_KEY, String(lastRecorded));
+    sessionStorage.setItem(LAST_ACTIVITY_KEY, String(lastRecorded));
 
     const updateActivity = () => {
       const now = Date.now();
       if (now - lastRecorded > 10000) {
         lastRecorded = now;
-        localStorage.setItem(LAST_ACTIVITY_KEY, String(now));
+        sessionStorage.setItem(LAST_ACTIVITY_KEY, String(now));
       }
     };
 
     const interval = setInterval(() => {
-      const storedLast = Number(localStorage.getItem(LAST_ACTIVITY_KEY) || "0");
+      const storedLast = Number(sessionStorage.getItem(LAST_ACTIVITY_KEY) || "0");
       if (storedLast > 0 && Date.now() - storedLast > INACTIVITY_TIMEOUT_MS) {
         handleLogout("Oturumunuz 30 dakika hareketsizlik nedeniyle güvenlik gerekçesiyle sonlandırıldı.");
       }
@@ -230,8 +230,8 @@ export function AdminPage() {
     const isValid = hashedInput === DEFAULT_PASSCODE_HASH || (storedCustom ? hashedInput === storedCustom : false);
 
     if (isValid) {
-      localStorage.setItem(ADMIN_STORAGE_KEY, "true");
-      localStorage.setItem(LAST_ACTIVITY_KEY, String(Date.now()));
+      sessionStorage.setItem(ADMIN_STORAGE_KEY, "true");
+      sessionStorage.setItem(LAST_ACTIVITY_KEY, String(Date.now()));
       localStorage.setItem(FAILED_ATTEMPTS_KEY, "0");
       localStorage.removeItem(LOCKOUT_UNTIL_KEY);
       setIsAuthenticated(true);
@@ -254,6 +254,8 @@ export function AdminPage() {
   };
 
   const handleLogout = (customMsg?: string) => {
+    sessionStorage.removeItem(ADMIN_STORAGE_KEY);
+    sessionStorage.removeItem(LAST_ACTIVITY_KEY);
     localStorage.removeItem(ADMIN_STORAGE_KEY);
     localStorage.removeItem(LAST_ACTIVITY_KEY);
     setIsAuthenticated(false);
